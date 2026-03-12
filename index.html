@@ -9,281 +9,192 @@
   
   <style>
     :root{
-      --primary:#4f46e5;
-      --primary-2:#06b6d4;
-      --accent:#f59e0b;
-      --bg:#f8fbff;
-      --dark:#1e293b;
-      --text:#334155;
-      --muted:#64748b;
-      --white:#ffffff;
-      --shadow:0 22px 60px rgba(79,70,229,.12);
-      --radius:26px;
-      --max:1180px;
+      --primary:#4f46e5; --primary-2:#06b6d4; --accent:#f59e0b;
+      --bg:#f8fbff; --dark:#1e293b; --text:#334155;
+      --muted:#64748b; --white:#ffffff; --shadow:0 22px 60px rgba(79,70,229,.12);
     }
-
     *{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth}
-    body{font-family: 'Hind Siliguri', sans-serif; background:linear-gradient(180deg,#f8fbff,#f0f9ff);color:var(--text);line-height:1.65}
+    body{font-family: 'Hind Siliguri', sans-serif; background:#f8fbff; color:var(--text); line-height:1.65}
     
-    /* Scroll Animation */
     .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
     .reveal.active { opacity: 1; transform: translateY(0); }
 
-    .container{width:min(var(--max),92%);margin:auto}
-    .section{padding:88px 0}
+    .container{width:min(1180px,92%);margin:auto}
+    .section{padding:80px 0}
     .section-head{max-width:760px;margin:0 auto 42px;text-align:center}
     .eyebrow{display:inline-block;padding:8px 14px;border-radius:999px;background:#eef2ff;color:var(--primary);font-weight:700;font-size:.84rem;margin-bottom:14px}
-    .section-head h2{font-size:2.2rem;line-height:1.2;color:var(--dark);margin-bottom:12px}
-
-    .sticky-bar{position:sticky;top:0;z-index:1001;background:linear-gradient(90deg,#22c55e,#06b6d4);color:#fff;padding:10px 14px;text-align:center;font-weight:700;font-size:.95rem}
-    .topbar{background:linear-gradient(90deg,var(--primary),var(--primary-2));color:#eff6ff}
-    .topbar .container{display:flex;justify-content:space-between;padding:10px 0;font-size:.92rem}
-
-    .navbar{position:sticky;top:44px;z-index:999;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border-bottom:1px solid rgba(79,70,229,.08)}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
-    .brand h1{font-size:1.12rem;color:var(--dark)}
-    .menu{display:flex;gap:20px;align-items:center}
-    .menu a{font-weight:700;font-size:.95rem;color:#334155}
-
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 22px;border-radius:999px;font-weight:700;transition:.25s ease;border:none;cursor:pointer}
-    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary-2));color:#fff;box-shadow:0 18px 36px rgba(79,70,229,.25)}
-    .btn-light{background:#fff;color:var(--primary)}
-
-    .hero{position:relative;background:linear-gradient(135deg,rgba(79,70,229,1),rgba(14,165,233,1));color:#fff;padding:100px 0 80px;overflow:hidden}
-    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center}
-    .hero h2{font-size:2.8rem;line-height:1.12;margin-bottom:16px}
-    .hero-card{background:rgba(255,255,255,.15);backdrop-filter:blur(10px);border-radius:30px;padding:30px;border:1px solid rgba(255,255,255,0.2)}
-    .profile img{width:140px;height:140px;border-radius:50%;border:4px solid #fff;margin-bottom:15px;object-fit:cover}
-
-    .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:-40px;position:relative;z-index:2}
-    .trust-card{background:#fff;border-radius:20px;padding:24px;text-align:center;box-shadow:var(--shadow)}
-    .trust-card h3{color:var(--primary);font-size:2rem}
-
-    .grid-2, .grid-3, .grid-4{display:grid;gap:24px}
-    .grid-2{grid-template-columns:1fr 1fr}
-    .grid-3{grid-template-columns:repeat(3,1fr)}
-    .grid-4{grid-template-columns:repeat(4,1fr)}
     
-    .card, .service, .tile, .review-card, .step{background:#fff;border-radius:24px;padding:26px;box-shadow:var(--shadow);transition:0.3s}
-    .service:hover{transform:translateY(-8px)}
+    .sticky-bar{position:sticky;top:0;z-index:1001;background:linear-gradient(90deg,#22c55e,#06b6d4);color:#fff;padding:10px;text-align:center;font-weight:700}
+    .navbar{position:sticky;top:44px;z-index:999;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border-bottom:1px solid #eee}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:15px 0}
+    
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:999px;font-weight:700;transition:.25s;border:none;cursor:pointer;text-decoration:none}
+    .btn-primary{background:linear-gradient(135deg,var(--primary),var(--primary-2));color:#fff}
 
-    /* Milestone Tracker */
-    .milestone-box{background:#fff;border-radius:20px;padding:20px;border:2px solid #eef2ff;cursor:pointer;transition:0.3s;margin-bottom:10px}
-    .milestone-box:hover{border-color:var(--primary);background:#f8fbff}
-    .milestone-content{display:none;padding-top:15px;border-top:1px solid #eee;margin-top:10px}
+    .hero{background:linear-gradient(135deg,#4f46e5,#06b6d4);color:#fff;padding:80px 0;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+    .hero-card{background:rgba(255,255,255,.15);backdrop-filter:blur(10px);border-radius:30px;padding:30px;text-align:center}
+    .hero-card img{width:140px;height:140px;border-radius:50%;border:4px solid #fff;margin-bottom:15px;object-fit:cover}
+
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    
+    .card, .service, .tile, .review-card{background:#fff;border-radius:24px;padding:25px;box-shadow:var(--shadow)}
+    .milestone-box{background:#fff;border-radius:20px;padding:20px;border:2px solid #eef2ff;cursor:pointer;margin-bottom:10px}
+    .milestone-content{display:none;padding-top:10px;border-top:1px solid #eee}
 
     .check-list{list-style:none;margin-top:10px}
-    .check-list li{position:relative;padding-left:22px}
-    .check-list li::before{content:'✓';position:absolute;left:0;color:#22c55e;font-weight:700}
+    .check-list li::before{content:'✓ ';color:#22c55e;font-weight:700}
 
-    .form-card{background:#fff;border-radius:30px;padding:30px;box-shadow:var(--shadow)}
-    .input-group{margin-bottom:15px;display:flex;flex-direction:column;gap:8px}
-    .input-group input, .input-group select, .input-group textarea{padding:12px;border:1px solid #dbeafe;border-radius:12px;outline:none;background:#fbfdff}
-
+    .gallery-box{height:200px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:50px;background:#eef2ff}
+    
     .footer{background:#1e1b4b;color:#dbeafe;padding:60px 0 20px}
     .float-wrap{position:fixed;right:20px;bottom:20px;display:flex;flex-direction:column;gap:12px;z-index:1000}
-    .float-btn{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:24px;box-shadow:0 10px 20px rgba(0,0,0,0.2)}
-    .wa{background:#25D366} .call{background:#4f46e5}
+    .float-btn{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:24px;text-decoration:none}
 
-    @media (max-width:1024px){ .hero-grid, .grid-2, .grid-3, .grid-4, .trust-grid{grid-template-columns:1fr} }
+    @media (max-width:1024px){ .hero-grid, .grid-2, .grid-3, .grid-4{grid-template-columns:1fr} }
   </style>
 </head>
 <body>
 
-  <div class="sticky-bar">দ্রুত অ্যাপয়েন্টমেন্টের জন্য হোয়াটসঅ্যাপ করুন: <a href="https://wa.me/8801842739654" target="_blank" style="color:#fff">01842-739654</a></div>
-
-  <div class="topbar">
-    <div class="container">
-      <div>🌍 আধুনিক শিশু পুনর্বাসন সেবা</div>
-      <div>📍 খুলনা, বাংলাদেশ | 📞 01842-739654</div>
-    </div>
-  </div>
+  <div class="sticky-bar">দ্রুত অ্যাপয়েন্টমেন্টের জন্য: <a href="https://wa.me/8801842739654" style="color:#fff">01842-739654</a></div>
 
   <header class="navbar">
     <div class="container nav">
-      <div class="brand">
-        <h1>Habibullah Pediatric Rehab</h1>
-        <span style="font-size:0.8rem; color:var(--muted)">শিশুর চলাফেরা ও বিকাশের সহযাত্রী</span>
-      </div>
-      <nav class="menu">
-        <a href="#about">পরিচয়</a>
-        <a href="#services">সেবা</a>
-        <a href="#symptom">এআই সহায়ক</a>
-        <a href="#milestones">মাইলস্টোন</a>
-        <a href="#appointment">অ্যাপয়েন্টমেন্ট</a>
+      <div class="brand"><h1>Habibullah Pediatric Rehab</h1></div>
+      <nav class="menu" style="display:flex; gap:15px">
+        <a href="#about" style="text-decoration:none; font-weight:700; color:var(--dark)">পরিচয়</a>
+        <a href="#symptom" style="text-decoration:none; font-weight:700; color:var(--dark)">এআই সহায়ক</a>
+        <a href="#appointment" style="text-decoration:none; font-weight:700; color:var(--dark)">বুকিং</a>
       </nav>
-      <a class="btn btn-primary" href="#appointment">অ্যাপয়েন্টমেন্ট</a>
     </div>
   </header>
 
   <section class="hero">
     <div class="container hero-grid">
       <div class="reveal">
-        <div class="eyebrow" style="background:rgba(255,255,255,0.2); color:#fff">খুলনায় বিশেষায়িত শিশু ফিজিওথেরাপি</div>
+        <div class="eyebrow" style="background:rgba(255,255,255,0.2); color:#fff">খুলনায় প্রিমিয়াম শিশু ফিজিওথেরাপি</div>
         <h2>শিশুর সুস্থ বিকাশ ও স্বনির্ভরতার সহযাত্রী</h2>
-        <p>সেরিব্রাল পালসি, বিকাশে দেরি এবং চলাফেরার সমস্যায় আপনার শিশুর প্রতিটি ধাপ হোক আত্মবিশ্বাসী।</p>
+        <p>সেরিব্রাল পালসি ও বিকাশে দেরির আধুনিক পুনর্বাসন সেবা।</p>
         <div style="display:flex; gap:10px; margin-top:20px">
-          <a class="btn btn-light" href="#appointment">📅 অ্যাপয়েন্টমেন্ট নিন</a>
-          <a class="btn btn-primary" href="https://wa.me/8801842739654" target="_blank" style="background:#25D366"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+          <a class="btn btn-primary" href="#appointment">বুকিং দিন</a>
+          <a class="btn btn-light" href="https://wa.me/8801842739654" style="background:#25D366; color:#fff; border:none">WhatsApp</a>
         </div>
       </div>
-
       <div class="hero-card reveal">
-        <div class="profile" style="text-align:center">
-          <img src="habib.jpg" alt="হাবিবুল্লাহ">
-          <h3 style="color:#fff">হাবিবুল্লাহ</h3>
-          <p style="color:#dbeafe">Bachelor of Physiotherapy (BPT)</p>
-          <p style="color:#dbeafe">Master of Physiotherapy in Pediatrics (Running, JUST)</p>
-          <div style="margin-top:15px; background:rgba(255,255,255,0.1); padding:10px; border-radius:15px; font-size:0.9rem">
-            🩺 বিশেষ কাজের ক্ষেত্র: শিশু পুনর্বাসন, সেরিব্রাল পালসি, বিকাশে দেরি
-          </div>
-        </div>
+        <img src="habib.jpg" alt="হাবিবুল্লাহ">
+        <h3>হাবিবুল্লাহ</h3>
+        <p>ফিজিওথেরাপিস্ট (BPT, MPT-Pediatrics Running)</p>
       </div>
     </div>
-  </section>
-
-  <section class="container trust-grid">
-    <div class="trust-card reveal"><h3>২+</h3><p>বছরের অভিজ্ঞতা</p></div>
-    <div class="trust-card reveal"><h3>৯+</h3><p>দৈনিক রোগী সেবা</p></div>
-    <div class="trust-card reveal"><h3>৪+</h3><p>বিশেষায়িত বিভাগ</p></div>
-    <div class="trust-card reveal"><h3>১০০%</h3><p>পরিবার-কেন্দ্রিক যত্ন</p></div>
   </section>
 
   <section class="section reveal" id="about">
     <div class="container grid-2">
       <div class="card">
         <div class="eyebrow">আমার পরিচয়</div>
-        <h2>শিশুর চলাফেরা ও অংশগ্রহণকে গুরুত্ব দিয়ে পুনর্বাসন সেবা</h2>
-        <p>আমি বিশ্বাস করি শিশুর থেরাপি শুধু ব্যায়াম নয়—এটি খেলা, নির্দেশনা, পরিবারের অংশগ্রহণ এবং নিয়মিত অনুসরণের সমন্বয়।</p>
+        <h2>শিশুর অংশগ্রহণকে গুরুত্ব দিয়ে সেবা</h2>
+        <p>আমি বিশ্বাস করি প্রতিটি শিশুর থেরাপি হওয়া উচিত আনন্দময়।</p>
         <ul class="check-list">
-          <li>শিশুবান্ধব ও খেলা-ভিত্তিক থেরাপি পদ্ধতি</li>
-          <li>অভিভাবককে বাসায় করণীয় শেখানো</li>
-          <li>প্রমাণ-ভিত্তিক শিশু পুনর্বাসন চিন্তাধারা</li>
+          <li>শিশুবান্ধব ও খেলা-ভিত্তিক পদ্ধতি</li>
+          <li>অভিভাবকদের হাতে-কলমে প্রশিক্ষণ</li>
+          <li>প্রমাণ-ভিত্তিক আধুনিক চিকিৎসা</li>
         </ul>
       </div>
-      <div class="card" style="background:linear-gradient(135deg,var(--primary),var(--primary-2)); color:#fff">
+      <div class="card" style="background:var(--primary); color:#fff">
         <h3 style="color:#fff">পেশাগত শক্তি</h3>
-        <p>Bachelor of Physiotherapy (BPT) সম্পন্ন করে এবং বর্তমানে মাস্টার্স (Pediatrics)-এ অধ্যয়নরত থাকার ফলে আমি শিশুদের জন্য সর্বাধুনিক চিকিৎসা নিশ্চিত করি।</p>
+        <p>আমি দীর্ঘ সময় শিশুদের নিয়ে কাজ করছি। বর্তমানে জাস্ট (JUST)-এ মাস্টার্স করার মাধ্যমে আমি সর্বশেষ আন্তর্জাতিক প্রোটোকলগুলো আমার রোগীদের প্রদান করি।</p>
       </div>
     </div>
   </section>
 
-  <section class="section reveal" id="services" style="background:#f0f9ff">
-    <div class="container">
-      <div class="section-head">
-        <div class="eyebrow">সেবাসমূহ</div>
-        <h2>বিশেষায়িত ফিজিওথেরাপি সেবা</h2>
-      </div>
-      <div class="grid-4">
-        <div class="service"><h3>🧸 পেডিয়াট্রিক ফিজিওথেরাপি</h3><p>শিশুর বসা, দাঁড়ানো, হাঁটা ও ব্যালান্স উন্নত করা হয়।</p></div>
-        <div class="service"><h3>🧠 সেরিব্রাল পালসি</h3><p>পেশীর শক্ত ভাব কমানো এবং চলাফেরায় নিয়ন্ত্রণ আনা।</p></div>
-        <div class="service"><h3>🎈 বিকাশে দেরি</h3><p>বয়স অনুযায়ী শারীরিক বিকাশে পিছিয়ে থাকা শিশুদের সহায়তা।</p></div>
-        <div class="service"><h3>🌈 কার্যক্ষমতা উন্নয়ন</h3><p>দৈনন্দিন কাজে শিশুর সক্ষমতা ও অংশগ্রহণ বাড়ানো।</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section reveal" id="symptom">
+  <section class="section reveal" id="symptom" style="background:#f0f9ff">
     <div class="container">
       <div class="section-head">
         <div class="eyebrow">এআই সহায়ক</div>
         <h2>AI Pediatric Symptom Checker</h2>
-        <p>শিশুর সমস্যার ধরন বেছে নিয়ে একটি প্রাথমিক ধারণা নিন। এটি চিকিৎসকের বিকল্প নয়।</p>
+        <p>শিশুর সমস্যার ধরন বেছে নিয়ে একটি প্রাথমিক ধারণা নিন।</p>
       </div>
       <div class="grid-2">
-        <div class="form-card">
-          <div class="input-group">
-            <label>প্রধান সমস্যা নির্বাচন করুন</label>
-            <select id="symptomSelect">
-              <option value="">নির্বাচন করুন</option>
-              <option value="not_walking">বয়স অনুযায়ী হাঁটতে পারছে না</option>
-              <option value="not_sitting">বয়স অনুযায়ী বসতে পারছে না</option>
-              <option value="stiff_body">শরীর খুব শক্ত বা টানটান লাগে</option>
-              <option value="poor_balance">বারবার পড়ে যায় বা ব্যালান্স কম</option>
-              <option value="toe_walking">পায়ের আঙুলের ওপর ভর দিয়ে হাঁটে</option>
+        <div class="card" style="padding:30px">
+          <label style="font-weight:700">প্রধান সমস্যা:</label>
+          <select id="symptomSelect" style="width:100%; padding:12px; margin:10px 0; border-radius:10px; border:1px solid #ddd">
+            <option value="">নির্বাচন করুন</option>
+            <option value="not_walking">বয়স অনুযায়ী হাঁটতে পারছে না</option>
+            <option value="not_sitting">বয়স অনুযায়ী বসতে পারছে না</option>
+            <option value="stiff_body">শরীর খুব শক্ত বা টানটান লাগে</option>
+            <option value="toe_walking">পায়ের আঙুলের ওপর ভর দিয়ে হাঁটে</option>
+            <option value="poor_balance">বারবার পড়ে যায় বা ব্যালান্স কম</option>
+          </select>
+          <label style="font-weight:700">বয়স:</label>
+          <div style="display:flex; gap:10px">
+            <input type="number" id="childage" style="flex:1; padding:10px; border-radius:10px; border:1px solid #ddd">
+            <select id="ageunit" style="padding:10px; border-radius:10px; border:1px solid #ddd">
+              <option value="মাস">মাস</option>
+              <option value="বছর">বছর</option>
             </select>
           </div>
-          <div class="input-group">
-            <label>শিশুর বয়স</label>
-            <div style="display:flex; gap:10px">
-              <input type="number" id="childage" placeholder="সংখ্যা">
-              <select id="ageunit">
-                <option value="মাস">মাস</option>
-                <option value="বছর">বছর</option>
-              </select>
-            </div>
-          </div>
-          <button class="btn btn-primary" style="width:100%" onclick="checkSymptom()">প্রাথমিক ধারণা দেখুন</button>
+          <button class="btn btn-primary" style="width:100%; margin-top:15px" onclick="checkSymptom()">ফলাফল দেখুন</button>
         </div>
-        <div class="card" id="symptom-result" style="min-height:200px">ফলাফল এখানে দেখা যাবে...</div>
+        <div class="card" id="symptom-result">ফলাফল এখানে আসবে...</div>
       </div>
     </div>
   </section>
 
-  <section class="section reveal" id="milestones">
+  <section class="section reveal">
     <div class="container">
-        <div class="section-head">
-            <div class="eyebrow">বিকাশ ক্যালকুলেটর</div>
-            <h2>শিশুর বয়স অনুযায়ী মাইলস্টোন ট্র্যাকার</h2>
-        </div>
-        <div class="grid-3">
-            <div class="milestone-box" onclick="toggleMilestone('m36')">
-                <h4>৩ - ৬ মাস <i class="fa-solid fa-chevron-down" style="float:right"></i></h4>
-                <div id="m36" class="milestone-content">ঘাড় শক্ত হওয়া, দুই হাতে খেলনা ধরা এবং আওয়াজ শুনে তাকানো।</div>
-            </div>
-            <div class="milestone-box" onclick="toggleMilestone('m712')">
-                <h4>৭ - ১২ মাস <i class="fa-solid fa-chevron-down" style="float:right"></i></h4>
-                <div id="m712" class="milestone-content">একা বসা, হামাগুড়ি দেওয়া এবং কিছু ধরে দাঁড়িয়ে থাকা।</div>
-            </div>
-            <div class="milestone-box" onclick="toggleMilestone('m12+')">
-                <h4>১ - ২ বছর <i class="fa-solid fa-chevron-down" style="float:right"></i></h4>
-                <div id="m12+" class="milestone-content">একা হাঁটা, নিচু হয়ে খেলনা নেওয়া এবং ছোট শব্দ বলা।</div>
-            </div>
-        </div>
+      <div class="section-head"><h2>বয়স অনুযায়ী মাইলস্টোন</h2></div>
+      <div class="grid-3">
+        <div class="milestone-box" onclick="toggleMilestone('m1')"><h4>৩-৬ মাস <i class="fa-solid fa-chevron-down"></i></h4><div id="m1" class="milestone-content">ঘাড় শক্ত হওয়া, আওয়াজ শুনে তাকানো।</div></div>
+        <div class="milestone-box" onclick="toggleMilestone('m2')"><h4>৭-১২ মাস <i class="fa-solid fa-chevron-down"></i></h4><div id="m2" class="milestone-content">একা বসা, হামাগুড়ি দেওয়া।</div></div>
+        <div class="milestone-box" onclick="toggleMilestone('m3')"><h4>১-২ বছর <i class="fa-solid fa-chevron-down"></i></h4><div id="m3" class="milestone-content">একা হাঁটা, নিচু হয়ে খেলনা নেওয়া।</div></div>
+      </div>
     </div>
   </section>
 
-  <section class="section reveal" id="reviews">
+  <section class="section reveal">
     <div class="container">
-      <div class="section-head"><h2>অভিভাবকদের মতামত</h2></div>
+      <div class="section-head"><h2>ক্লিনিক ও কার্যক্রম</h2></div>
       <div class="grid-3">
-        <div class="review-card"><p>"আমার শিশুর ব্যালান্স ও চলাফেরায় অনেক উন্নতি হয়েছে।"</p><strong>— অভিভাবক</strong></div>
-        <div class="review-card"><p>"থেরাপি ও বাসার করণীয় খুব সুন্দরভাবে বুঝিয়ে দিয়েছেন।"</p><strong>— পরিবার</strong></div>
-        <div class="review-card"><p>"খুব সহায়ক ও শিশুবান্ধব পরিবেশ।"</p><strong>— অভিভাবক</strong></div>
+        <div class="card"><div class="gallery-box">🧸</div><p style="text-align:center; margin-top:10px">থেরাপি পরিবেশ</p></div>
+        <div class="card"><div class="gallery-box">🎈</div><p style="text-align:center; margin-top:10px">খেলার উপকরণ</p></div>
+        <div class="card"><div class="gallery-box">🌈</div><p style="text-align:center; margin-top:10px">বিকাশ সহায়তা</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" style="background:#fff">
+    <div class="container">
+      <div class="section-head"><h2>সাধারণ প্রশ্ন</h2></div>
+      <div style="max-width:800px; margin:auto">
+        <details style="background:#f8fbff; padding:15px; border-radius:15px; margin-bottom:10px"><summary style="font-weight:700; cursor:pointer">ফিজিওথেরাপি কখন দরকার?</summary><p>বিকাশ পিছিয়ে থাকলে বা শরীর শক্ত হলে।</p></details>
+        <details style="background:#f8fbff; padding:15px; border-radius:15px; margin-bottom:10px"><summary style="font-weight:700; cursor:pointer">অভিভাবক কি থাকতে পারবেন?</summary><p>হ্যাঁ, অবশ্যই থাকতে পারবেন।</p></details>
       </div>
     </div>
   </section>
 
   <section class="section reveal" id="appointment">
     <div class="container grid-2">
-      <div class="form-card">
-        <h3>অ্যাপয়েন্টমেন্ট বুকিং</h3>
+      <div class="card">
+        <h3>বুকিং অনুরোধ</h3>
         <form onsubmit="sendToWhatsApp(); return false;">
-          <div class="input-group"><input type="text" id="name" placeholder="আপনার নাম" required></div>
-          <div class="input-group"><input type="tel" id="phone" placeholder="মোবাইল নম্বর" required></div>
-          <div class="input-group"><input type="text" id="age" placeholder="শিশুর বয়স"></div>
-          <button type="submit" class="btn btn-primary" style="width:100%">বুকিং অনুরোধ পাঠান</button>
+          <input type="text" id="name" placeholder="আপনার নাম" style="width:100%; padding:12px; margin:10px 0; border-radius:10px; border:1px solid #ddd" required>
+          <input type="tel" id="phone" placeholder="ফোন নম্বর" style="width:100%; padding:12px; margin:10px 0; border-radius:10px; border:1px solid #ddd" required>
+          <button type="submit" class="btn btn-primary" style="width:100%">WhatsApp-এ পাঠান</button>
         </form>
       </div>
-      <div class="card">
-        <h3>যোগাযোগ</h3>
+      <div class="card" style="background:var(--dark); color:#fff">
+        <h3 style="color:#fff">যোগাযোগ</h3>
         <p>📍 খুলনা, বাংলাদেশ</p>
         <p>📞 ০১৮৪২-৭৩৯৬৫৪</p>
-        <p>💬 WhatsApp: ০১৮৪২-৭৩৯৬৫৪</p>
       </div>
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="container reveal" style="text-align:center">
-      <h3>Habibullah Pediatric Rehab</h3>
-      <p>© 2026 সর্বস্বত্ব সংরক্ষিত। | শিশু ফিজিওথেরাপি খুলনা</p>
-    </div>
-  </footer>
-
   <div class="float-wrap">
-    <a href="https://wa.me/8801842739654" target="_blank" class="float-btn wa"><i class="fa-brands fa-whatsapp"></i></a>
-    <a href="tel:01842739654" class="float-btn call"><i class="fa-solid fa-phone"></i></a>
+    <a href="https://wa.me/8801842739654" class="float-btn" style="background:#25D366"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="tel:01842739654" class="float-btn" style="background:#4f46e5"><i class="fa-solid fa-phone"></i></a>
   </div>
 
   <script>
@@ -295,10 +206,11 @@
     function checkSymptom(){
       const s = document.getElementById('symptomSelect').value;
       const age = document.getElementById('childage').value + ' ' + document.getElementById('ageunit').value;
-      let text = "অনুগ্রহ করে সমস্যা নির্বাচন করুন।";
-      if(s === 'not_walking') text = `আপনার শিশুর বয়স ${age}। এই বয়সে হাঁটতে না পারলে দ্রুত অ্যাসেসমেন্ট প্রয়োজন। এটি মোটর ডিলে হতে পারে।`;
-      if(s === 'stiff_body') text = `শরীর শক্ত থাকা সেরিব্রাল পালসির লক্ষণ হতে পারে। দ্রুত বিশেষজ্ঞের পরামর্শ নিন।`;
-      document.getElementById('symptom-result').innerHTML = `<div style="padding:15px; background:#f0f7ff; border-radius:10px; border-left:4px solid var(--primary)">${text}</div>`;
+      let res = "";
+      if(s === 'not_walking') res = `আপনার শিশুর বয়স ${age}। এই বয়সে হাঁটতে না পারা মোটর ডিলের লক্ষণ হতে পারে। দ্রুত বিশেষজ্ঞের পরামর্শ নিন।`;
+      else if(s === 'stiff_body') res = `পেশীর শক্ত ভাব সেরিব্রাল পালসির সংকেত হতে পারে। সঠিক পজিশনিং ও থেরাপি প্রয়োজন।`;
+      else res = "অনুগ্রহ করে তথ্য প্রদান করুন।";
+      document.getElementById('symptom-result').innerHTML = `<div style="padding:15px; background:#eef2ff; border-radius:12px; border-left:5px solid var(--primary)">${res}</div>`;
     }
 
     function reveal() {
@@ -309,16 +221,13 @@
             if (elementTop < windowHeight - 100) { reveals[i].classList.add("active"); }
         }
     }
-    window.addEventListener("scroll", reveal);
-    reveal();
+    window.addEventListener("scroll", reveal); reveal();
 
     function sendToWhatsApp(){
       const name = document.getElementById('name').value;
       const phone = document.getElementById('phone').value;
-      const age = document.getElementById('age').value;
-      const msg = `বুকিং অনুরোধ:%0Aনাম: ${name}%0Aমোবাইল: ${phone}%0Aবয়স: ${age}`;
-      window.open(`https://wa.me/8801842739654?text=${msg}`, '_blank');
+      window.open(`https://wa.me/8801842739654?text=বুকিং অনুরোধ:%0Aনাম: ${name}%0Aফোন: ${phone}`, '_blank');
     }
   </script>
 </body>
-</html>p
+</html>
