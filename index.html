@@ -281,6 +281,7 @@
     }
 
     .call{background:#4f46e5}
+    .wa{background:#25D366}
 
     .chat-bubble-wrap{
       opacity:0;
@@ -361,11 +362,6 @@
       .grid-4{grid-template-columns:repeat(2,1fr)}
       .form-grid{grid-template-columns:1fr}
       .hero h2{font-size:2.35rem}
-    }
-
-    @keyframes floatIn{
-      from{opacity:0;transform:translateY(12px)}
-      to{opacity:1;transform:translateY(0)}
     }
 
     @media (max-width:680px){
@@ -640,7 +636,14 @@
 
           <div class="input-group">
             <label for="childage">শিশুর বয়স</label>
-            <input type="text" id="childage" placeholder="যেমন: ২ বছর / ১৮ মাস" />
+            <div style="display:grid;grid-template-columns:1fr 120px;gap:10px;">
+              <input type="number" id="childage" placeholder="যেমন: 2 / 18" min="0" />
+              <select id="ageunit">
+                <option value="">নির্বাচন করুন</option>
+                <option value="মাস">মাস</option>
+                <option value="বছর">বছর</option>
+              </select>
+            </div>
           </div>
 
           <button class="btn btn-primary" style="width:100%" onclick="checkSymptom()">প্রাথমিক ধারণা দেখুন</button>
@@ -905,6 +908,10 @@
   </footer>
 
   <div class="float-wrap">
+    <a class="float-btn wa" href="https://wa.me/8801842739654" target="_blank" title="WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
     <div id="waBubble" class="chat-bubble-wrap">
       <a class="chat-bubble" href="https://wa.me/8801842739654" target="_blank">
         <div class="chat-top">
@@ -947,13 +954,15 @@
 
     function checkSymptom(){
       const symptom = document.getElementById('symptomSelect').value;
-      const age = document.getElementById('childage').value.trim();
+      const ageNumber = document.getElementById('childage').value.trim();
+      const ageUnit = document.getElementById('ageunit').value;
       const result = document.getElementById('symptom-result');
 
       let text = '';
+      const age = ageNumber && ageUnit ? ageNumber + ' ' + ageUnit : '';
 
       if(!symptom && !age){
-        result.innerHTML = '<div style="padding:14px 16px;border-radius:16px;background:#fff7ed;color:#9a3412;font-weight:700;">আগে সমস্যার ধরন নির্বাচন করুন এবং শিশুর বয়স লিখুন। তারপর “প্রাথমিক ধারণা দেখুন” বাটনে চাপুন।</div>';
+        result.innerHTML = '<div style="padding:14px 16px;border-radius:16px;background:#fff7ed;color:#9a3412;font-weight:700;">আগে সমস্যার ধরন নির্বাচন করুন এবং শিশুর বয়স দিন। তারপর “প্রাথমিক ধারণা দেখুন” বাটনে চাপুন।</div>';
         return;
       }
 
@@ -962,8 +971,8 @@
         return;
       }
 
-      if(!age){
-        result.innerHTML = '<div style="padding:14px 16px;border-radius:16px;background:#fff7ed;color:#9a3412;font-weight:700;">দয়া করে শিশুর বয়স লিখুন। তারপর আবার বাটনে চাপুন।</div>';
+      if(!ageNumber || !ageUnit){
+        result.innerHTML = '<div style="padding:14px 16px;border-radius:16px;background:#fff7ed;color:#9a3412;font-weight:700;">দয়া করে শিশুর বয়সের সংখ্যা এবং মাস/বছর নির্বাচন করুন।</div>';
         return;
       }
 
@@ -997,28 +1006,42 @@
       const bubble = document.getElementById('waBubble');
       const typedMessage = document.getElementById('typedMessage');
       const typingDots = document.getElementById('typingDots');
-
       const fullText = 'আপনার শিশুর সমস্যা জানাতে এখানে চাপুন';
 
-      setTimeout(function () {
+      function showTypingBubble() {
         bubble.classList.add('show');
+        typedMessage.textContent = '';
+        typingDots.style.display = 'flex';
 
-        setTimeout(function () {
-          let i = 0;
-          typedMessage.textContent = '';
+        let i = 0;
 
-          const typingInterval = setInterval(function () {
-            typedMessage.textContent += fullText.charAt(i);
-            i++;
+        const typingInterval = setInterval(function () {
+          typedMessage.textContent += fullText.charAt(i);
+          i++;
 
-            if (i >= fullText.length) {
-              clearInterval(typingInterval);
+          if (i >= fullText.length) {
+            clearInterval(typingInterval);
+
+            setTimeout(function () {
               typingDots.style.display = 'none';
-            }
-          }, 45);
-        }, 500);
+            }, 300);
 
-      }, 3000);
+            setTimeout(function () {
+              bubble.classList.remove('show');
+              typedMessage.textContent = '';
+              typingDots.style.display = 'flex';
+            }, 2500);
+          }
+        }, 45);
+      }
+
+      setTimeout(showTypingBubble, 3000);
+
+      setInterval(function () {
+        if (!bubble.classList.contains('show')) {
+          showTypingBubble();
+        }
+      }, 5000);
     });
   </script>
 </body>
