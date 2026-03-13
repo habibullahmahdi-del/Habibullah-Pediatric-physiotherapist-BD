@@ -742,49 +742,6 @@
       color:#7c2d12;
     }
 
-    .checker-wrap{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:24px;
-    }
-    .checker-card{
-      background:#ffffff;
-      border-radius:28px;
-      padding:28px;
-      box-shadow:0 18px 50px rgba(15,23,42,.08);
-      border:1px solid #eaf2ff;
-    }
-    .age-row{
-      display:grid;
-      grid-template-columns:1fr 140px;
-      gap:10px;
-    }
-    .checker-result{
-      color:#475569;
-      line-height:1.8;
-    }
-    .result-box{
-      padding:16px 18px;
-      border-radius:16px;
-      margin-bottom:12px;
-      font-size:.96rem;
-    }
-    .result-info{
-      background:#eff6ff;
-      border-left:5px solid #3b82f6;
-      color:#1e3a8a;
-    }
-    .result-warn{
-      background:#fff7ed;
-      border-left:5px solid #f59e0b;
-      color:#9a3412;
-    }
-    .result-danger{
-      background:#fef2f2;
-      border-left:5px solid #ef4444;
-      color:#991b1b;
-    }
-
     .contact-strip{
       background:linear-gradient(135deg,#eef2ff,#ecfeff);
       border-radius:30px;
@@ -976,7 +933,7 @@
     }
 
     @media (max-width:1024px){
-      .hero-grid,.grid-2,.cta-banner,.footer-grid,.timing-wrap,.pdf-card,.checker-wrap,.dual-map-grid,.today-card{grid-template-columns:1fr}
+      .hero-grid,.grid-2,.cta-banner,.footer-grid,.timing-wrap,.pdf-card,.dual-map-grid,.today-card{grid-template-columns:1fr}
       .grid-3,.trust-grid{grid-template-columns:repeat(2,1fr)}
       .grid-4,.education-grid,.flag-grid,.contact-mini-grid{grid-template-columns:repeat(2,1fr)}
       .faq-list{grid-template-columns:1fr}
@@ -997,7 +954,6 @@
       .chat-bubble{min-width:auto;max-width:220px;padding:10px 12px}
       .chat-message{font-size:13px;min-height:38px}
       .float-btn{width:54px;height:54px}
-      .age-row{grid-template-columns:1fr}
       .timing-row{flex-direction:column;align-items:flex-start}
       .today-card{padding:18px}
       .today-pills{justify-content:flex-start}
@@ -1062,7 +1018,6 @@
         <a href="#education" class="nav-link" onclick="closeMenu()">Parent Education</a>
         <a href="#redflag" class="nav-link" onclick="closeMenu()">Red Flags</a>
         <a href="#symptom" class="nav-link" onclick="closeMenu()">সহায়ক নির্দেশনা</a>
-        <a href="#development-checker" class="nav-link" onclick="closeMenu()">Checker</a>
         <a href="#faq" class="nav-link" onclick="closeMenu()">FAQ</a>
         <a href="#reviews" class="nav-link" onclick="closeMenu()">মতামত</a>
         <a href="#appointment" class="nav-link" onclick="closeMenu()">অ্যাপয়েন্টমেন্ট</a>
@@ -1172,7 +1127,7 @@
   </section>
 
   <section class="section" style="padding-top:40px;">
-    <div class="container grid-2">
+    <div class="container">
       <div class="soft-panel reveal">
         <div class="bigicon">🏥</div>
         <div class="eyebrow">আমার সেবার বৈশিষ্ট্য</div>
@@ -1197,18 +1152,6 @@
             <strong style="display:block;color:var(--dark);margin-bottom:4px;">👨‍👩‍👧 অভিভাবক সহায়তা</strong>
             <span style="color:var(--muted);font-size:.92rem;">বাসায় করণীয় শেখানো হয়</span>
           </div>
-        </div>
-      </div>
-
-      <div class="card reveal">
-        <div class="eyebrow">দ্রুত আস্থা তৈরি</div>
-        <h3 style="font-size:1.35rem;margin-bottom:14px;">কেন এই পোর্টফোলিও আলাদা</h3>
-        <div style="display:grid;gap:12px;">
-          <div style="padding:13px 14px;border-radius:16px;background:#f8fafc;">✨ ব্যক্তিগত পেশাদার পরিচয়কে কেন্দ্র করে উপস্থাপনা</div>
-          <div style="padding:13px 14px;border-radius:16px;background:#f8fafc;">💙 নরম মেডিক্যাল রং ও শিশুবান্ধব অনুভূতি</div>
-          <div style="padding:13px 14px;border-radius:16px;background:#f8fafc;">📱 সহজ অ্যাপয়েন্টমেন্ট ও হোয়াটসঅ্যাপ যোগাযোগ</div>
-          <div style="padding:13px 14px;border-radius:16px;background:#f8fafc;">🏅 শিশু পুনর্বাসনে ফোকাসড ব্যক্তিগত ব্র্যান্ড</div>
-          <div style="padding:13px 14px;border-radius:16px;background:#f8fafc;">📍 দুইটি চেম্বারের পরিষ্কার তথ্য ও ম্যাপ সহায়তা</div>
         </div>
       </div>
     </div>
@@ -1538,55 +1481,6 @@
     </div>
   </section>
 
-  <section class="section" id="development-checker" style="background:linear-gradient(180deg,#ffffff,#f8fbff);">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="eyebrow">Child Development Checker</div>
-        <h2>বয়স ও মোটর দক্ষতার ভিত্তিতে প্রাথমিক মূল্যায়ন</h2>
-        <p>শিশুর বয়স এবং বর্তমান মোটর স্কিল নির্বাচন করলে একটি সাধারণ ক্লিনিক্যাল ধারণা দেখা যাবে।</p>
-      </div>
-
-      <div class="checker-wrap">
-        <div class="checker-card reveal">
-          <div class="input-group">
-            <label for="devAge">শিশুর বয়স</label>
-            <div class="age-row">
-              <input type="number" id="devAge" placeholder="যেমন: 10" min="0" />
-              <select id="devAgeUnit">
-                <option value="">নির্বাচন করুন</option>
-                <option value="months">মাস</option>
-                <option value="years">বছর</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="input-group">
-            <label for="devSkill">শিশুর বর্তমান মোটর দক্ষতা</label>
-            <select id="devSkill">
-              <option value="">নির্বাচন করুন</option>
-              <option value="head">মাথা ধরে</option>
-              <option value="roll">পাশ ফিরতে পারে</option>
-              <option value="sit">বসে থাকতে পারে</option>
-              <option value="crawl">হামাগুড়ি দেয়</option>
-              <option value="stand">দাঁড়াতে পারে</option>
-              <option value="walk">হাঁটে</option>
-              <option value="run">দৌড়ায়</option>
-            </select>
-          </div>
-
-          <button class="btn btn-primary" style="width:100%" onclick="checkDevelopment()">ফলাফল দেখুন</button>
-        </div>
-
-        <div class="checker-card reveal">
-          <h3 style="margin-bottom:14px;">ফলাফল</h3>
-          <div id="developmentResult" class="checker-result">
-            শিশুর বয়স এবং বর্তমান দক্ষতা নির্বাচন করলে এখানে প্রাথমিক মূল্যায়ন দেখা যাবে।
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="section">
     <div class="container">
       <div class="pdf-card reveal">
@@ -1910,7 +1804,6 @@
             <li><a href="#education">Parent Education</a></li>
             <li><a href="#redflag">Red Flags</a></li>
             <li><a href="#symptom">সহায়ক নির্দেশনা</a></li>
-            <li><a href="#development-checker">Checker</a></li>
             <li><a href="#appointment">অ্যাপয়েন্টমেন্ট</a></li>
             <li><a href="#location">লোকেশন</a></li>
           </ul>
@@ -2146,117 +2039,6 @@
       `;
     }
 
-    function checkDevelopment(){
-      const ageValue = parseFloat(document.getElementById('devAge').value);
-      const ageUnit = document.getElementById('devAgeUnit').value;
-      const skill = document.getElementById('devSkill').value;
-      const result = document.getElementById('developmentResult');
-
-      if(isNaN(ageValue) || !ageUnit || !skill){
-        result.innerHTML = `
-          <div class="result-box result-warn">
-            দয়া করে বয়স, বয়সের একক এবং বর্তমান মোটর দক্ষতা নির্বাচন করুন।
-          </div>
-        `;
-        return;
-      }
-
-      const ageInMonths = ageUnit === 'years' ? ageValue * 12 : ageValue;
-
-      let expected = '';
-      let status = '';
-      let advice = '';
-
-      if(ageInMonths <= 3){
-        expected = 'এই বয়সে মাথা ধরা শুরু করা এবং হাত-পা নড়াচড়া সক্রিয় হওয়া সাধারণ বিষয়।';
-        status = (skill === 'head' || skill === 'roll')
-          ? 'বর্তমান তথ্য অনুযায়ী মোটর বিকাশ বয়স অনুযায়ী গ্রহণযোগ্য মনে হচ্ছে।'
-          : 'এই বয়সে head control পর্যবেক্ষণ করা গুরুত্বপূর্ণ।';
-        advice = 'Tummy time এবং নিয়মিত developmental observation উপকারী।';
-      }
-      else if(ageInMonths <= 6){
-        expected = 'এই বয়সে মাথা ভালোভাবে ধরা, পাশ ফেরা এবং হাত দিয়ে খেলনা ধরার আগ্রহ দেখা যায়।';
-        status = (skill === 'head' || skill === 'roll' || skill === 'sit')
-          ? 'মোটর বিকাশ বয়স অনুযায়ী এগোচ্ছে বলে মনে হচ্ছে।'
-          : 'Head control ও rolling skill আরও close monitoring দরকার হতে পারে।';
-        advice = 'যদি rolling বা head control না আসে, মূল্যায়ন বিবেচনা করা যেতে পারে।';
-      }
-      else if(ageInMonths <= 9){
-        expected = 'এই বয়সে সহায়তা ছাড়া বসা, posture control এবং হামাগুড়ির প্রস্তুতি দেখা যায়।';
-        status = (skill === 'sit' || skill === 'crawl' || skill === 'roll')
-          ? 'বর্তমান মোটর দক্ষতা বয়স অনুযায়ী যুক্তিযুক্ত মনে হচ্ছে।'
-          : 'বসার দক্ষতা না থাকলে developmental review প্রয়োজন হতে পারে।';
-        advice = 'Independent sitting না এলে pediatric physiotherapy assessment উপকারী হতে পারে।';
-      }
-      else if(ageInMonths <= 12){
-        expected = 'এই বয়সে বসা, হামাগুড়ি, দাঁড়ানোর চেষ্টা এবং furniture ধরে চলা শুরু হতে পারে।';
-        status = (skill === 'sit' || skill === 'crawl' || skill === 'stand')
-          ? 'মোটর development ভালোভাবে অগ্রসর হচ্ছে বলে মনে হচ্ছে।'
-          : 'এই বয়সে sitting বা standing skill না থাকলে মূল্যায়ন গুরুত্বপূর্ণ হতে পারে।';
-        advice = 'Pull to stand, balance এবং trunk control পর্যবেক্ষণ করুন।';
-      }
-      else if(ageInMonths <= 18){
-        expected = 'এই বয়সে দাঁড়ানো এবং স্বাধীনভাবে হাঁটা শুরু হওয়া সাধারণ বিষয়।';
-        status = (skill === 'stand' || skill === 'walk')
-          ? 'বর্তমান skill বয়স অনুযায়ী স্বাভাবিক সীমার মধ্যে থাকতে পারে।'
-          : '১৮ মাসের কাছাকাছি বয়সেও হাঁটা না এলে assessment প্রয়োজন হতে পারে।';
-        advice = 'Walking না এলে professional evaluation নেওয়া ভালো।';
-      }
-      else if(ageInMonths <= 24){
-        expected = 'এই বয়সে হাঁটা, দৌড়ানোর চেষ্টা, সিঁড়িতে আগ্রহ এবং balance skill বাড়তে থাকে।';
-        status = (skill === 'walk' || skill === 'run')
-          ? 'বর্তমান মোটর দক্ষতা বয়স অনুযায়ী উপযুক্ত বলে মনে হচ্ছে।'
-          : 'এই বয়সে walking delay বা poor balance থাকলে মূল্যায়ন প্রয়োজন হতে পারে।';
-        advice = 'Frequent falls বা gait সমস্যা থাকলে দ্রুত consult করুন।';
-      }
-      else{
-        expected = 'এই বয়সে হাঁটা, দৌড়ানো, balance control এবং functional mobility আরও উন্নত হয়।';
-        status = (skill === 'walk' || skill === 'run')
-          ? 'বর্তমান skill functional motor development-এর সাথে সামঞ্জস্যপূর্ণ মনে হচ্ছে।'
-          : 'এই বয়সে মৌলিক চলাফেরার দক্ষতায় সমস্যা থাকলে মূল্যায়ন করা উচিত।';
-        advice = 'Posture, balance, coordination এবং functional independence assess করা যেতে পারে।';
-      }
-
-      let urgency = '';
-      if(
-        (ageInMonths >= 6 && skill === 'head') ||
-        (ageInMonths >= 10 && (skill === 'head' || skill === 'roll')) ||
-        (ageInMonths >= 18 && skill !== 'walk' && skill !== 'run') ||
-        (ageInMonths >= 24 && skill !== 'walk' && skill !== 'run')
-      ){
-        urgency = `
-          <div class="result-box result-danger">
-            বয়স অনুযায়ী আরও বিস্তারিত pediatric physiotherapy assessment প্রয়োজন হতে পারে।
-          </div>
-        `;
-      } else {
-        urgency = `
-          <div class="result-box result-info">
-            বর্তমান তথ্য অনুযায়ী নিয়মিত পর্যবেক্ষণ এবং age-appropriate activity চালিয়ে যাওয়া যেতে পারে।
-          </div>
-        `;
-      }
-
-      result.innerHTML = `
-        <div class="result-box result-info">
-          <strong>বয়সভিত্তিক সাধারণ প্রত্যাশা:</strong><br>
-          ${expected}
-        </div>
-
-        <div class="result-box result-info">
-          <strong>প্রাথমিক মূল্যায়ন:</strong><br>
-          ${status}
-        </div>
-
-        <div class="result-box result-warn">
-          <strong>পরবর্তী পদক্ষেপ:</strong><br>
-          ${advice}
-        </div>
-
-        ${urgency}
-      `;
-    }
-
     let currentSlide = 0;
     const totalSlides = 3;
 
@@ -2315,7 +2097,7 @@
         if (!bubble.classList.contains('show')) {
           showTypingBubble();
         }
-      }, 5000);
+      }, 30000);
     });
 
     const observer = new IntersectionObserver((entries) => {
