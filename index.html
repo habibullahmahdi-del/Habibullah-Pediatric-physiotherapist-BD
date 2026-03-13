@@ -262,7 +262,7 @@
       align-items:center;
       justify-content:space-between;
       gap:20px;
-      padding:12px 0;
+      padding:8px 0;
       position:relative;
     }
     .brand h1{
@@ -361,7 +361,7 @@
       radial-gradient(circle at bottom right, rgba(255,255,255,.16), transparent 28%),
       linear-gradient(135deg,rgba(79,70,229,.95),rgba(14,165,233,.9));
       color:#fff;
-      padding:52px 0 78px;
+      padding:36px 0 78px;
     }
     .hero::before,.hero::after{
       content:"";
@@ -380,11 +380,7 @@
       position:relative;
       z-index:1;
     }
-    .hero h1{
-      font-size:3rem;
-      line-height:1.12;
-      margin-bottom:16px;
-    }
+    .hero h1{font-size:3rem;line-height:1.12;margin-bottom:16px}
     .hero p{font-size:1.06rem;max-width:680px;opacity:.98;margin-bottom:24px}
     .hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
     .badge{
@@ -435,17 +431,35 @@
     .hero-card .decor2{bottom:18px;left:18px;font-size:24px}
     .hero-card .decor3{top:54px;left:18px;font-size:22px}
 
-    .profile{text-align:center;margin-bottom:18px}
+    .profile{
+      text-align:center;
+      margin-bottom:18px;
+      position:relative;
+      isolation:isolate;
+    }
+    .profile::before{
+      content:"";
+      position:absolute;
+      width:280px;
+      height:280px;
+      border-radius:50%;
+      left:50%;
+      top:-10px;
+      transform:translateX(-50%);
+      background:radial-gradient(circle, rgba(255,255,255,.22) 0%, rgba(255,255,255,.08) 45%, transparent 72%);
+      filter:blur(8px);
+      z-index:-1;
+    }
     .profile img{
-      width:180px;
-      height:180px;
+      width:240px;
+      height:240px;
       border-radius:50%;
       object-fit:cover;
       object-position:center;
-      border:6px solid #ffffff;
+      border:6px solid rgba(255,255,255,.85);
       background:#fff;
       margin:0 auto 14px;
-      box-shadow:0 15px 40px rgba(0,0,0,.25);
+      box-shadow:0 18px 46px rgba(0,0,0,.28), 0 0 0 12px rgba(255,255,255,.08);
     }
     .profile h3{font-size:1.7rem;margin-bottom:6px}
     .profile p{margin-top:10px;color:#dbeafe}
@@ -980,13 +994,13 @@
     }
 
     #appointment{
-      padding-bottom:24px !important;
+      padding-bottom:16px !important;
     }
     #location{
-      padding-top:24px !important;
+      padding-top:16px !important;
     }
     #contact{
-      padding-top:24px !important;
+      padding-top:16px !important;
     }
 
     @media (max-width:1024px){
@@ -1007,20 +1021,20 @@
 
     @media (max-width:680px){
       .navbar{top:48px}
-      .hero{padding:34px 0 58px}
+      .hero{padding:20px 0 58px}
       .hero h1{font-size:1.95rem}
       .grid-3,.grid-4,.trust-grid,.hero-stats,.education-grid,.flag-grid,.contact-mini-grid{grid-template-columns:1fr}
       .section{padding:60px 0}
       .section-head h2{font-size:1.82rem}
 
       #appointment{
-        padding-bottom:18px !important;
+        padding-bottom:12px !important;
       }
       #location{
-        padding-top:18px !important;
+        padding-top:12px !important;
       }
       #contact{
-        padding-top:18px !important;
+        padding-top:12px !important;
       }
 
       .float-wrap{
@@ -1053,7 +1067,10 @@
         border-radius:0 0 18px 18px;
       }
       .menu.show{display:flex}
-      .nav{position:relative;padding:10px 0}
+      .nav{
+        position:relative;
+        padding:8px 0;
+      }
       .nav > .btn.btn-primary{display:none}
       .mobile-booking-bar{display:block}
       .sticky-bar{
@@ -1069,12 +1086,22 @@
         font-size:.84rem;
       }
       .brand h1{
-        font-size:.98rem;
-        line-height:1.15;
+        font-size:1.02rem;
+        line-height:1.2;
+        margin-bottom:2px;
       }
       .brand span{
-        font-size:.78rem;
-        line-height:1.3;
+        font-size:.82rem;
+        line-height:1.35;
+      }
+      .profile::before{
+        width:250px;
+        height:250px;
+        top:-6px;
+      }
+      .profile img{
+        width:220px;
+        height:220px;
       }
     }
   </style>
@@ -1136,11 +1163,8 @@
       <div class="reveal">
         <div class="eyebrow" style="background:rgba(255,255,255,.16);color:#fff;">ব্যক্তিগত পেশাদার পোর্টফোলিও</div>
         <h1>আমি হাবিবুল্লাহ — শিশুদের বিকাশ, চলাফেরা, ব্যালান্স ও কার্যক্ষমতা উন্নয়নে নিবেদিত একজন পেডিয়াট্রিক ফিজিওথেরাপিস্ট</h1>
-        <p>
-          শিশুদের সেরিব্রাল পালসি, বিকাশে দেরি, ব্যালান্স সমস্যা,
-          চলাফেরার সীমাবদ্ধতা এবং দৈনন্দিন কাজে অংশগ্রহণ উন্নয়নে কাজ করি।
-          আমার লক্ষ্য হলো শিশু-বান্ধব ফিজিওথেরাপি, অভিভাবক নির্দেশনা এবং কার্যকর
-          পুনর্বাসন সহায়তার মাধ্যমে প্রতিটি শিশুর সম্ভাবনাকে আরও ভালোভাবে এগিয়ে নিতে সাহায্য করা।
+        <p id="heroText">
+          যদি শিশু বয়স অনুযায়ী বসতে, দাঁড়াতে বা হাঁটতে দেরি করে, এটি বিকাশের একটি সতর্ক সংকেত হতে পারে। সময়মতো পেডিয়াট্রিক ফিজিওথেরাপি শিশুর মোটর বিকাশ উন্নত করতে সহায়তা করতে পারে।
         </p>
 
         <div class="hero-badges">
@@ -1498,7 +1522,7 @@
         <div class="flag-item reveal">৬ মাস বয়সেও মাথা ঠিকভাবে ধরে রাখতে না পারা</div>
         <div class="flag-item reveal">৯–১০ মাসেও নিজে বসতে না পারা</div>
         <div class="flag-item reveal">১৮ মাস বয়সেও হাঁটা শুরু না করা</div>
-        <div class="flag-item reveal">শরীর খুব শক্ত বা খুব ঢিলা মনে হওয়া</div>
+        <div class="flag-item reveal">শরীর খুব শক্ত বা খুব তুলতুলে নরম মনে হওয়া</div>
         <div class="flag-item reveal">এক পাশের হাত বা পা কম ব্যবহার করা</div>
         <div class="flag-item reveal">বারবার পড়ে যাওয়া বা ভারসাম্য কম থাকা</div>
       </div>
@@ -2183,12 +2207,37 @@
       }, 250);
     }
 
+    const heroMessages = [
+      "যদি শিশু বয়স অনুযায়ী বসতে, দাঁড়াতে বা হাঁটতে দেরি করে, এটি বিকাশের একটি সতর্ক সংকেত হতে পারে। সময়মতো পেডিয়াট্রিক ফিজিওথেরাপি শিশুর মোটর বিকাশ উন্নত করতে সহায়তা করতে পারে।",
+      "শিশু হাঁটার সময় বারবার পড়ে যায় বা ব্যালান্স ঠিক রাখতে না পারলে এটি শরীরের সমন্বয় সমস্যার ইঙ্গিত হতে পারে। সঠিক ফিজিওথেরাপি সহায়তায় চলাফেরা ও ব্যালান্স উন্নত করা সম্ভব।",
+      "শিশুর হাত-পা যদি অস্বাভাবিকভাবে শক্ত লাগে বা খুব তুলতুলে নরম মনে হয়, এটি স্নায়বিক সমস্যার একটি লক্ষণ হতে পারে। পেডিয়াট্রিক ফিজিওথেরাপির মাধ্যমে পেশী নিয়ন্ত্রণ ও চলাচল উন্নত করা যায়।",
+      "শিশু যদি হামাগুড়ি, বসা বা হাঁটার milestone অর্জনে দেরি করে, দ্রুত মূল্যায়ন গুরুত্বপূর্ণ। সময়মতো থেরাপি শুরু করলে শিশুর বিকাশের গতি উন্নত হতে পারে।",
+      "শিশু যদি শরীরের এক পাশ বেশি ব্যবহার করে বা এক পাশে দুর্বলতা দেখা যায়, এটি বিকাশগত সমস্যার একটি সতর্ক সংকেত হতে পারে। ফিজিওথেরাপির মাধ্যমে শরীরের সমন্বয় উন্নত করা সম্ভব।",
+      "শিশুর বিকাশ নিয়ে কোনো উদ্বেগ থাকলে দেরি না করে পরামর্শ নেওয়া গুরুত্বপূর্ণ। early intervention ফিজিওথেরাপি শিশুর উন্নয়নে গুরুত্বপূর্ণ ভূমিকা রাখতে পারে।"
+    ];
+
+    let heroIndex = 0;
+    const heroTextEl = document.getElementById('heroText');
+
+    function changeHeroText(){
+      heroTextEl.style.opacity = '0';
+
+      setTimeout(() => {
+        heroIndex = (heroIndex + 1) % heroMessages.length;
+        heroTextEl.textContent = heroMessages[heroIndex];
+        heroTextEl.style.opacity = '1';
+      }, 250);
+    }
+
     window.addEventListener('load', function () {
       document.getElementById('pageLoader').classList.add('hide');
       document.body.classList.remove('loading');
       document.getElementById('year').textContent = new Date().getFullYear();
       stickyMessageEl.textContent = stickyMessages[0];
+      heroTextEl.style.transition = 'opacity .35s ease';
+      heroTextEl.textContent = heroMessages[0];
       setInterval(changeStickyMessage, 5000);
+      setInterval(changeHeroText, 12000);
       startAutoSlide();
     });
 
