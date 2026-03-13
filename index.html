@@ -81,6 +81,7 @@
       overflow-x:hidden;
     }
     body.loading{overflow:hidden}
+    body.menu-open{overflow:hidden}
     a{text-decoration:none;color:inherit}
     img{max-width:100%;display:block}
     img,iframe{border:0}
@@ -553,7 +554,11 @@
       overflow:hidden;
       border-radius:28px;
     }
-    .review-slider{display:flex;transition:transform .5s ease}
+    .review-slider{
+      display:flex;
+      transition:transform .5s ease;
+      will-change:transform;
+    }
     .review-slide{min-width:100%;padding:6px}
     .review-card strong{color:var(--dark)}
     .stars{color:#f59e0b;font-size:1.05rem;margin-bottom:10px}
@@ -861,12 +866,16 @@
     .call{background:#4f46e5}
     .wa{background:#25D366}
 
-    .chat-bubble-wrap{opacity:0;transform:translateY(16px);pointer-events:none}
+    .chat-bubble-wrap{
+      opacity:0;
+      transform:translateY(16px);
+      pointer-events:none;
+      transition:all .45s ease;
+    }
     .chat-bubble-wrap.show{
       opacity:1;
       transform:translateY(0);
       pointer-events:auto;
-      transition:all .45s ease;
     }
     .chat-bubble{
       display:block;
@@ -1439,7 +1448,7 @@
           <div class="input-group">
             <label for="childage">শিশুর বয়স</label>
             <div style="display:grid;grid-template-columns:1fr 120px;gap:10px;">
-              <input type="number" id="childage" placeholder="যেমন: 2 / 18" min="0" />
+              <input type="number" id="childage" placeholder="যেমন: 2 / 18" min="0" step="0.1" />
               <select id="ageunit">
                 <option value="">নির্বাচন করুন</option>
                 <option value="মাস">মাস</option>
@@ -1543,7 +1552,7 @@
         <p>শিশুবান্ধব সেবা, পরিষ্কার নির্দেশনা এবং পরিবার-কেন্দ্রিক সহযোগিতার ভিত্তিতে অভিভাবকদের অভিজ্ঞতার কিছু নমুনা এখানে তুলে ধরা হয়েছে।</p>
       </div>
 
-      <div class="review-slider-wrap reveal">
+      <div class="review-slider-wrap reveal" id="reviewWrap">
         <div class="review-slider" id="reviewSlider">
           <div class="review-slide">
             <div class="review-card">
@@ -1613,7 +1622,7 @@
         </div>
 
         <div class="form-card reveal">
-          <form onsubmit="sendToWhatsApp(); return false;">
+          <form id="appointmentForm" onsubmit="sendToWhatsApp(); return false;">
             <div class="form-grid">
               <div class="input-group">
                 <label for="name">অভিভাবকের নাম</label>
@@ -1836,7 +1845,7 @@
       </div>
 
       <div class="copyright">
-        © 2026 Habibullah | Pediatric Physiotherapist. All rights reserved.
+        © <span id="year"></span> Habibullah | Pediatric Physiotherapist. All rights reserved.
       </div>
     </div>
   </footer>
@@ -1876,27 +1885,26 @@
   </div>
 
   <script>
+    const body = document.body;
+    const menu = document.getElementById('mobileMenu');
+    const menuBtn = document.querySelector('.menu-toggle');
+
     function toggleMenu(){
-      const menu = document.getElementById('mobileMenu');
-      const btn = document.querySelector('.menu-toggle');
       const isOpen = menu.classList.toggle('show');
-      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      body.classList.toggle('menu-open', isOpen);
     }
 
     function closeMenu(){
-      const menu = document.getElementById('mobileMenu');
-      const btn = document.querySelector('.menu-toggle');
       menu.classList.remove('show');
-      btn.setAttribute('aria-expanded', 'false');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      body.classList.remove('menu-open');
     }
 
     document.addEventListener('click', function(e){
-      const menu = document.getElementById('mobileMenu');
       const nav = document.querySelector('.nav');
-      const btn = document.querySelector('.menu-toggle');
       if (!nav.contains(e.target)) {
-        menu.classList.remove('show');
-        btn.setAttribute('aria-expanded', 'false');
+        closeMenu();
       }
     });
 
@@ -1920,6 +1928,11 @@
         return;
       }
 
+      if(name.length < 2){
+        alert('দয়া করে সঠিক নাম লিখুন।');
+        return;
+      }
+
       if(!bdPhoneRegex.test(phone)){
         alert('সঠিক বাংলাদেশি মোবাইল নম্বর লিখুন। যেমন: 018XXXXXXXX');
         return;
@@ -1934,16 +1947,17 @@
 সমস্যা: ${problem || 'উল্লেখ করা হয়নি'}`;
 
       const url = `https://wa.me/8801842739654?text=${encodeURIComponent(message)}`;
-      window.open(url, '_blank');
+      window.open(url, '_blank', 'noopener');
     }
 
     function checkSymptom(){
       const symptom = document.getElementById('symptomSelect').value;
-      const ageNumber = parseFloat(document.getElementById('childage').value.trim());
+      const ageValue = document.getElementById('childage').value.trim();
+      const ageNumber = parseFloat(ageValue);
       const ageUnit = document.getElementById('ageunit').value;
       const result = document.getElementById('symptom-result');
 
-      if(!symptom || isNaN(ageNumber) || !ageUnit){
+      if(!symptom || !ageValue || isNaN(ageNumber) || ageNumber < 0 || !ageUnit){
         result.innerHTML = `
           <div class="disclaimer warn">
             দয়া করে সমস্যার ধরন, বয়সের সংখ্যা এবং মাস/বছর নির্বাচন করুন।
@@ -2041,41 +2055,60 @@
 
     let currentSlide = 0;
     const totalSlides = 3;
+    const slider = document.getElementById('reviewSlider');
+    const dots = document.querySelectorAll('.review-dot');
+    const reviewWrap = document.getElementById('reviewWrap');
+    let slideInterval;
 
     function goToSlide(index){
       currentSlide = index;
-      const slider = document.getElementById('reviewSlider');
-      const dots = document.querySelectorAll('.review-dot');
       slider.style.transform = `translateX(-${index * 100}%)`;
       dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
     }
 
-    function autoSlide(){
-      currentSlide = (currentSlide + 1) % totalSlides;
-      goToSlide(currentSlide);
+    function startAutoSlide(){
+      stopAutoSlide();
+      slideInterval = setInterval(() => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        goToSlide(currentSlide);
+      }, 4000);
     }
-    setInterval(autoSlide, 4000);
+
+    function stopAutoSlide(){
+      if(slideInterval){
+        clearInterval(slideInterval);
+      }
+    }
+
+    reviewWrap.addEventListener('mouseenter', stopAutoSlide);
+    reviewWrap.addEventListener('mouseleave', startAutoSlide);
 
     window.addEventListener('load', function () {
       document.getElementById('pageLoader').classList.add('hide');
       document.body.classList.remove('loading');
+      document.getElementById('year').textContent = new Date().getFullYear();
 
       const bubble = document.getElementById('waBubble');
       const typedMessage = document.getElementById('typedMessage');
       const typingDots = document.getElementById('typingDots');
       const fullText = 'আপনার শিশুর সমস্যা জানাতে এখানে চাপুন';
+      let typingRunning = false;
 
       function showTypingBubble() {
+        if (typingRunning) return;
+        typingRunning = true;
+
         bubble.classList.add('show');
         typedMessage.textContent = '';
         typingDots.style.display = 'flex';
 
         let i = 0;
-        const typingInterval = setInterval(function () {
-          typedMessage.textContent += fullText.charAt(i);
-          i++;
 
-          if (i >= fullText.length) {
+        const typingInterval = setInterval(function () {
+          if(i < fullText.length){
+            typedMessage.textContent += fullText.charAt(i);
+            i++;
+          } else {
             clearInterval(typingInterval);
 
             setTimeout(function () {
@@ -2086,6 +2119,7 @@
               bubble.classList.remove('show');
               typedMessage.textContent = '';
               typingDots.style.display = 'flex';
+              typingRunning = false;
             }, 2500);
           }
         }, 45);
@@ -2094,10 +2128,12 @@
       setTimeout(showTypingBubble, 3000);
 
       setInterval(function () {
-        if (!bubble.classList.contains('show')) {
+        if (!bubble.classList.contains('show') && !typingRunning) {
           showTypingBubble();
         }
       }, 30000);
+
+      startAutoSlide();
     });
 
     const observer = new IntersectionObserver((entries) => {
@@ -2120,7 +2156,7 @@
         const sectionTop = section.offsetTop - 130;
         const sectionId = section.getAttribute('id');
 
-        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+        if(scrollY >= sectionTop && scrollY < sectionTop + sectionHeight){
           navLinks.forEach(link => link.classList.remove('active'));
           const activeLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
           if(activeLink) activeLink.classList.add('active');
