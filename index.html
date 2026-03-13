@@ -19,11 +19,18 @@
   <meta property="og:locale" content="bn_BD" />
   <meta property="og:site_name" content="হাবিবুল্লাহ | পেডিয়াট্রিক ফিজিওথেরাপিস্ট" />
   <meta property="og:image" content="assets/preview.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="হাবিবুল্লাহ | পেডিয়াট্রিক ফিজিওথেরাপিস্ট" />
   <meta name="twitter:description" content="শিশুর বিকাশ, মোটর ফাংশন, ব্যালান্স এবং পরিবার-কেন্দ্রিক পুনর্বাসনে পেশাদার সহায়তা।" />
   <meta name="twitter:image" content="assets/preview.jpg" />
+
+  <meta name="geo.region" content="BD-KH" />
+  <meta name="geo.placename" content="Khulna" />
+  <meta name="geo.position" content="22.8456;89.5403" />
+  <meta name="ICBM" content="22.8456, 89.5403" />
 
   <link rel="icon" type="image/png" href="assets/favicon.png" />
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
@@ -42,7 +49,14 @@
       "addressLocality": "Khulna",
       "addressRegion": "Khulna",
       "addressCountry": "BD"
-    }
+    },
+    "knowsAbout": [
+      "পেডিয়াট্রিক ফিজিওথেরাপি",
+      "সেরিব্রাল পালসি পুনর্বাসন",
+      "বিকাশে দেরি",
+      "মোটর ডেভেলপমেন্ট",
+      "ব্যালান্স ট্রেনিং"
+    ]
   }
   </script>
 
@@ -52,7 +66,6 @@
       --primary-2:#06b6d4;
       --accent:#22c55e;
       --dark:#0f172a;
-      --dark-2:#1e293b;
       --text:#334155;
       --muted:#64748b;
       --line:#e2e8f0;
@@ -63,10 +76,7 @@
       --danger:#ef4444;
       --shadow:0 22px 60px rgba(79,70,229,.12);
       --shadow-soft:0 14px 34px rgba(15,23,42,.08);
-      --shadow-strong:0 26px 70px rgba(15,23,42,.14);
       --max:1180px;
-      --sticky-offset:132px;
-      --radius:26px;
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
@@ -86,11 +96,10 @@
     img,iframe{border:0}
     button,input,select,textarea{font:inherit}
     ::selection{background:#c7d2fe;color:#1e1b4b}
-    section[id]{scroll-margin-top:var(--sticky-offset)}
 
     .container{width:min(var(--max),92%);margin:auto}
     .section{padding:92px 0}
-    .section-head{max-width:820px;margin:0 auto 42px;text-align:center}
+    .section-head{max-width:800px;margin:0 auto 42px;text-align:center}
     .eyebrow{
       display:inline-block;
       padding:8px 14px;
@@ -112,7 +121,7 @@
 
     .reveal{
       opacity:0;
-      transform:translateY(28px);
+      transform:translateY(30px);
       transition:opacity .7s ease, transform .7s ease;
     }
     .reveal.show{
@@ -132,10 +141,13 @@
       gap:18px;
       transition:opacity .45s ease, visibility .45s ease;
     }
-    #pageLoader.hide{opacity:0;visibility:hidden}
+    #pageLoader.hide{
+      opacity:0;
+      visibility:hidden;
+    }
     .loader-logo{
-      width:84px;
-      height:84px;
+      width:82px;
+      height:82px;
       border-radius:24px;
       background:linear-gradient(135deg,var(--primary),var(--primary-2));
       display:flex;
@@ -180,21 +192,19 @@
     .sticky-bar{
       position:sticky;
       top:0;
+      min-height:60px;
       z-index:1003;
-      background:linear-gradient(90deg,#4f46e5,#06b6d4);
-      color:#fff;
-      padding:10px 14px;
-      text-align:center;
-      font-weight:700;
-      font-size:.95rem;
+      background:linear-gradient(90deg,#22c55e,#06b6d4);
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      padding:0 15px;
       box-shadow:0 8px 20px rgba(0,0,0,.08);
     }
-    .sticky-bar a{color:#fff;text-decoration:underline}
 
     .topbar{
       background:linear-gradient(90deg,var(--primary),var(--primary-2));
       color:#eff6ff;
-      border-bottom:1px solid rgba(255,255,255,.08);
     }
     .topbar .container{
       display:flex;
@@ -207,46 +217,41 @@
 
     .navbar{
       position:sticky;
-      top:48px;
+      top:60px;
       z-index:1000;
       background:rgba(255,255,255,.92);
-      backdrop-filter:blur(14px);
+      backdrop-filter:blur(12px);
       border-bottom:1px solid rgba(79,70,229,.08);
       transition:all .25s ease;
     }
-    .navbar.shrink{
-      box-shadow:0 10px 28px rgba(15,23,42,.06);
-      background:rgba(255,255,255,.97);
-    }
+    .navbar.shrink{box-shadow:0 10px 28px rgba(15,23,42,.06)}
     .nav{
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:20px;
-      padding:15px 0;
+      padding:16px 0;
       position:relative;
     }
     .brand h1{
-      font-size:1.03rem;
+      font-size:1.02rem;
       color:var(--dark);
       line-height:1.3;
-      font-weight:800;
     }
     .brand span{display:block;font-size:.82rem;color:var(--muted)}
 
     .menu{
       display:flex;
       flex-wrap:wrap;
-      gap:18px;
+      gap:20px;
       align-items:center;
     }
     .menu a{
       font-weight:700;
-      font-size:.94rem;
+      font-size:.95rem;
       color:#334155;
       position:relative;
       padding:6px 0;
-      transition:.2s ease;
     }
     .menu a::after{
       content:"";
@@ -266,9 +271,9 @@
       display:none;
       background:#fff;
       border:none;
-      width:46px;
-      height:46px;
-      border-radius:14px;
+      width:44px;
+      height:44px;
+      border-radius:12px;
       box-shadow:0 8px 20px rgba(0,0,0,.08);
       cursor:pointer;
       font-size:18px;
@@ -292,6 +297,7 @@
       color:#fff;
       box-shadow:0 18px 36px rgba(79,70,229,.25);
     }
+    .btn-primary:hover,.btn-danger:hover,.btn-success:hover{transform:translateY(-2px)}
     .btn-light{background:#fff;color:var(--primary)}
     .btn-outline{
       background:rgba(255,255,255,.14);
@@ -308,9 +314,6 @@
       color:#fff;
       box-shadow:0 18px 36px rgba(239,68,68,.22);
     }
-    .btn-primary:hover,.btn-light:hover,.btn-outline:hover,.btn-dark:hover,.btn-success:hover,.btn-danger:hover{
-      transform:translateY(-2px);
-    }
 
     .hero{
       position:relative;
@@ -320,7 +323,7 @@
       radial-gradient(circle at bottom right, rgba(255,255,255,.16), transparent 28%),
       linear-gradient(135deg,rgba(79,70,229,.95),rgba(14,165,233,.9));
       color:#fff;
-      padding:102px 0 78px;
+      padding:96px 0 78px;
     }
     .hero::before,.hero::after{
       content:"";
@@ -471,7 +474,6 @@
       padding:24px 18px;
       text-align:center;
       box-shadow:var(--shadow);
-      border:1px solid #eef4ff;
     }
     .trust-card h3{font-size:1.95rem;color:var(--primary);margin-bottom:5px}
     .trust-card p{color:var(--muted);font-size:.95rem}
@@ -480,7 +482,7 @@
     .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
     .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 
-    .card,.service,.review-card,.milestone-card,.timing-card,.why-card,.faq-item,.edu-card,.flag-item,.contact-mini-card,.map-info-card{
+    .card,.tile,.service,.step,.review-card,.milestone-card,.timing-card,.why-card,.faq-item,.edu-card,.flag-item,.contact-mini-card,.map-info-card{
       background:#fff;
       border-radius:26px;
       padding:26px;
@@ -488,12 +490,12 @@
       border:1px solid #eef7ff;
       transition:transform .25s ease, box-shadow .25s ease;
     }
-    .card:hover,.milestone-card:hover,.why-card:hover,.timing-card:hover,.review-card:hover,.faq-item:hover,.edu-card:hover,.flag-item:hover,.contact-mini-card:hover,.map-info-card:hover,.service:hover{
+    .card:hover,.tile:hover,.milestone-card:hover,.why-card:hover,.timing-card:hover,.review-card:hover,.faq-item:hover,.edu-card:hover,.flag-item:hover,.contact-mini-card:hover,.map-info-card:hover{
       transform:translateY(-5px);
       box-shadow:0 26px 58px rgba(79,70,229,.14);
     }
-    .card h3,.service h3,.milestone-card h4,.timing-card h4,.why-card h4,.faq-item h4,.edu-card h3,.contact-mini-card h4,.map-info-card h4{color:var(--dark)}
-    .card p,.service p,.milestone-card p,.timing-card p,.why-card p,.faq-item p,.edu-card p,.contact-mini-card p,.map-info-card p{color:var(--muted)}
+    .card h3,.tile h4,.service h3,.step h4,.milestone-card h4,.timing-card h4,.why-card h4,.faq-item h4,.edu-card h3,.contact-mini-card h4,.map-info-card h4{color:var(--dark)}
+    .card p,.tile p,.service p,.step p,.milestone-card p,.timing-card p,.why-card p,.faq-item p,.edu-card p,.contact-mini-card p,.map-info-card p{color:var(--muted)}
 
     .soft-panel{
       background:linear-gradient(135deg,#eef2ff,#ecfeff);
@@ -525,6 +527,8 @@
       font-weight:700;
     }
 
+    .service{position:relative}
+    .service:hover{transform:translateY(-6px)}
     .service .icon{
       width:60px;
       height:60px;
@@ -592,7 +596,6 @@
       border-radius:30px;
       padding:30px;
       box-shadow:var(--shadow);
-      border:1px solid #eef7ff;
     }
     .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
     .input-group{
@@ -620,6 +623,7 @@
     textarea{resize:vertical;min-height:120px}
     .full{grid-column:1/-1}
 
+    .milestone-card{text-align:left}
     .milestone-card .age{
       display:inline-block;
       margin-bottom:12px;
@@ -670,7 +674,6 @@
       padding:18px;
       box-shadow:var(--shadow);
       overflow:hidden;
-      margin-top:16px;
     }
     .map-frame{
       width:100%;
@@ -763,7 +766,9 @@
       gap:18px;
       margin-top:0;
     }
-    .contact-mini-card{padding:20px}
+    .contact-mini-card{
+      padding:20px;
+    }
     .contact-mini-card p strong{color:var(--dark)}
     .contact-actions{
       display:flex;
@@ -774,14 +779,10 @@
     }
 
     .footer{
-      background:
-      radial-gradient(circle at top right, rgba(99,102,241,.18), transparent 28%),
-      linear-gradient(180deg,#16123f,#1e1b4b);
+      background:#1e1b4b;
       color:#dbeafe;
       padding:66px 0 110px;
       margin-top:20px;
-      position:relative;
-      overflow:hidden;
     }
     .footer-grid{
       display:grid;
@@ -848,6 +849,78 @@
       color:#c7d2fe;
     }
 
+    .float-wrap{
+      position:fixed;
+      right:16px;
+      bottom:86px;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-end;
+      gap:12px;
+      z-index:2005;
+    }
+    .float-btn{
+      width:58px;
+      height:58px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-size:22px;
+      text-decoration:none;
+      box-shadow:0 12px 30px rgba(0,0,0,.2);
+    }
+    .call{background:#4f46e5}
+    .wa{background:#25D366}
+
+    .chat-bubble-wrap{
+      opacity:0;
+      transform:translateY(16px);
+      pointer-events:none;
+      transition:all .45s ease;
+    }
+    .chat-bubble-wrap.show{
+      opacity:1;
+      transform:translateY(0);
+      pointer-events:auto;
+    }
+    .chat-bubble{
+      display:block;
+      min-width:260px;
+      max-width:290px;
+      background:#fff;
+      color:#374151;
+      padding:12px 14px;
+      border-radius:18px;
+      border:1px solid #e5e7eb;
+      box-shadow:0 10px 26px rgba(0,0,0,.16);
+    }
+    .chat-top{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      font-weight:700;
+      margin-bottom:6px;
+    }
+    .chat-top i{color:#25D366;font-size:18px}
+    .chat-message{
+      font-size:14px;
+      line-height:1.45;
+      min-height:42px;
+      margin-bottom:8px;
+    }
+    .typing{display:flex;align-items:center;gap:4px}
+    .typing span{
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:#cbd5e1;
+      animation:typingBounce 1.2s infinite ease-in-out;
+    }
+    .typing span:nth-child(2){animation-delay:.15s}
+    .typing span:nth-child(3){animation-delay:.3s}
+
     .mobile-booking-bar{
       position:fixed;
       left:0;
@@ -862,9 +935,18 @@
     }
     .mobile-booking-inner{
       display:grid;
-      grid-template-columns:1fr;
+      grid-template-columns:1fr 1fr;
       gap:10px;
     }
+    .mobile-booking-inner.single{
+      grid-template-columns:1fr;
+    }
+    .mobile-booking-bar a{
+      min-height:48px;
+      font-size:.93rem;
+      border-radius:14px;
+    }
+
     .booking-btn{
       width:100%;
       min-height:54px;
@@ -884,64 +966,13 @@
       transform:translateY(-2px);
       box-shadow:0 16px 36px rgba(79,70,229,.45);
     }
+    .booking-btn i{
+      font-size:18px;
+    }
 
-    .success-modal{
-      position:fixed;
-      inset:0;
-      z-index:4000;
-      background:rgba(15,23,42,.55);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:18px;
-      opacity:0;
-      visibility:hidden;
-      transition:.25s ease;
-    }
-    .success-modal.show{
-      opacity:1;
-      visibility:visible;
-    }
-    .success-box{
-      width:min(520px,100%);
-      background:#fff;
-      border-radius:28px;
-      padding:28px;
-      box-shadow:var(--shadow-strong);
-      text-align:center;
-      transform:translateY(18px) scale(.98);
-      transition:.25s ease;
-    }
-    .success-modal.show .success-box{
-      transform:translateY(0) scale(1);
-    }
-    .success-icon{
-      width:78px;
-      height:78px;
-      margin:0 auto 16px;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:34px;
-      color:#fff;
-      background:linear-gradient(135deg,#16a34a,#22c55e);
-      box-shadow:0 18px 40px rgba(34,197,94,.25);
-    }
-    .success-box h3{
-      color:var(--dark);
-      font-size:1.5rem;
-      margin-bottom:10px;
-    }
-    .success-box p{
-      color:var(--muted);
-      margin-bottom:20px;
-    }
-    .success-actions{
-      display:flex;
-      justify-content:center;
-      flex-wrap:wrap;
-      gap:12px;
+    @keyframes typingBounce{
+      0%,80%,100%{transform:scale(.7);opacity:.5}
+      40%{transform:scale(1);opacity:1}
     }
 
     @media (max-width:1024px){
@@ -956,13 +987,30 @@
     }
 
     @media (max-width:680px){
-      :root{--sticky-offset:118px}
-      .navbar{top:48px}
-      .hero{padding:78px 0 58px}
+      .navbar{top:60px}
+      .hero{padding:74px 0 58px}
       .hero h1{font-size:1.95rem}
       .grid-3,.grid-4,.trust-grid,.hero-stats,.education-grid,.flag-grid,.contact-mini-grid{grid-template-columns:1fr}
       .section{padding:74px 0}
       .section-head h2{font-size:1.82rem}
+
+      .float-btn.wa{
+        position:fixed !important;
+        right:12px !important;
+        top:5px !important;
+        z-index:2006 !important;
+      }
+
+      .call{
+        position:fixed !important;
+        right:12px !important;
+        bottom:90px !important;
+        z-index:2006 !important;
+      }
+
+      .chat-bubble{min-width:auto;max-width:220px;padding:10px 12px}
+      .chat-message{font-size:13px;min-height:38px}
+      .float-btn{width:54px;height:54px}
       .timing-row{flex-direction:column;align-items:flex-start}
       .today-card{padding:18px}
       .today-pills{justify-content:flex-start}
@@ -979,18 +1027,13 @@
         width:100%;
         background:#fff;
         padding:18px;
-        box-shadow:0 18px 40px rgba(15,23,42,.12);
+        box-shadow:0 12px 30px rgba(0,0,0,.08);
         flex-direction:column;
         align-items:flex-start;
         gap:14px;
         border-radius:0 0 18px 18px;
-        border-top:1px solid #eef2ff;
       }
       .menu.show{display:flex}
-      .menu a{
-        width:100%;
-        padding:10px 0;
-      }
       .nav{position:relative}
       .nav > .btn.btn-primary{display:none}
       .mobile-booking-bar{display:block}
@@ -1005,15 +1048,12 @@
     <div class="loader-bar"><span></span></div>
   </div>
 
-  <div class="sticky-bar">
-    📅 দ্রুত অ্যাপয়েন্টমেন্টের জন্য
-    <a href="#appointment">এখানে বুক করুন</a>
-  </div>
+  <div class="sticky-bar"></div>
 
   <div class="topbar">
     <div class="container">
       <div>🌍 আধুনিক শিশু পুনর্বাসন সহায়তা</div>
-      <div>📞 01842-739654 | 📍 খুলনা, বাংলাদেশ</div>
+      <div>📞 01842-739654 | <i class="fa-brands fa-whatsapp"></i> WhatsApp সহায়তা | 📍 খুলনা, বাংলাদেশ</div>
     </div>
   </div>
 
@@ -1029,8 +1069,8 @@
         <a href="#services" class="nav-link" onclick="closeMenu()">সেবা</a>
         <a href="#milestone" class="nav-link" onclick="closeMenu()">মাইলস্টোন</a>
         <a href="#timing" class="nav-link" onclick="closeMenu()">সময়</a>
-        <a href="#education" class="nav-link" onclick="closeMenu()">অভিভাবক নির্দেশনা</a>
-        <a href="#redflag" class="nav-link" onclick="closeMenu()">সতর্কতার লক্ষণ</a>
+        <a href="#education" class="nav-link" onclick="closeMenu()">Parent Education</a>
+        <a href="#redflag" class="nav-link" onclick="closeMenu()">Red Flags</a>
         <a href="#symptom" class="nav-link" onclick="closeMenu()">সহায়ক নির্দেশনা</a>
         <a href="#faq" class="nav-link" onclick="closeMenu()">FAQ</a>
         <a href="#reviews" class="nav-link" onclick="closeMenu()">মতামত</a>
@@ -1067,8 +1107,10 @@
         </div>
 
         <div class="hero-actions">
-          <a class="btn btn-light" href="#appointment">📅 অ্যাপয়েন্টমেন্ট বুক করুন</a>
-          <a class="btn btn-outline" href="#location"><i class="fa-solid fa-location-dot"></i> লোকেশন দেখুন</a>
+          <a class="btn btn-light" href="#appointment">📅 অ্যাপয়েন্টমেন্ট নিন</a>
+          <a class="btn btn-outline" href="https://wa.me/8801842739654" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+          </a>
         </div>
 
         <div class="hero-stats">
@@ -1151,7 +1193,7 @@
           শিশুবান্ধব সেবা, পেশাদার উপস্থাপনা, অভিভাবক নির্দেশনা এবং সহজ যোগাযোগকে গুরুত্ব দেওয়া হয়েছে।
         </p>
 
-        <div class="grid-3" style="gap:14px;">
+        <div class="grid-3" style="grid-template-columns:repeat(3,1fr);gap:14px;">
           <div class="card" style="padding:16px;">
             <strong style="display:block;color:var(--dark);margin-bottom:4px;">🎯 লক্ষ্যভিত্তিক</strong>
             <span style="color:var(--muted);font-size:.92rem;">প্রতিটি শিশুর জন্য আলাদা লক্ষ্য</span>
@@ -1249,22 +1291,25 @@
         <p>প্রতিটি শিশুর বয়স, বিকাশের ধাপ, সমস্যা এবং দৈনন্দিন প্রয়োজন অনুযায়ী আলাদা থেরাপি পরিকল্পনা করা হয়।</p>
       </div>
 
-      <div class="grid-4">
+      <div class="grid-4" style="position:relative;">
         <div class="service reveal">
           <div class="icon">🧸</div>
           <h3>পেডিয়াট্রিক ফিজিওথেরাপি</h3>
           <p>শিশুর বসা, দাঁড়ানো, হাঁটা, ব্যালান্স, শরীরের ভঙ্গি এবং চলাফেরার দক্ষতা উন্নত করতে সহায়তা করা হয়।</p>
         </div>
+
         <div class="service reveal">
           <div class="icon">🌟</div>
           <h3>সেরিব্রাল পালসি সহায়তা</h3>
           <p>সেরিব্রাল পালসি আক্রান্ত শিশুর শরীরের শক্তভাব, ভঙ্গি নিয়ন্ত্রণ, চলাফেরা এবং অভিভাবকের করণীয় বিষয়ে সহায়তা দেওয়া হয়।</p>
         </div>
+
         <div class="service reveal">
           <div class="icon">🎈</div>
           <h3>বিকাশজনিত দেরির সহায়তা</h3>
           <p>যেসব শিশু বয়স অনুযায়ী বসা, দাঁড়ানো, হাঁটা বা নড়াচড়ায় পিছিয়ে থাকে, তাদের জন্য ধাপে ধাপে থেরাপি দেওয়া হয়।</p>
         </div>
+
         <div class="service reveal">
           <div class="icon">🌈</div>
           <h3>ব্যালান্স ও কার্যক্ষমতা উন্নয়ন</h3>
@@ -1277,7 +1322,7 @@
   <section class="section" id="milestone">
     <div class="container">
       <div class="section-head reveal">
-        <div class="eyebrow">ডেভেলপমেন্ট মাইলস্টোন</div>
+        <div class="eyebrow">Development Milestone Chart</div>
         <h2>বয়সভিত্তিক শিশুর সাধারণ মোটর বিকাশের ধাপ</h2>
         <p>এটি সাধারণ নির্দেশনা। সব শিশু একই গতিতে বিকাশ করে না। তবে উল্লেখযোগ্য দেরি থাকলে মূল্যায়ন করানো উপকারী হতে পারে।</p>
       </div>
@@ -1289,30 +1334,35 @@
           <h4>প্রাথমিক নিয়ন্ত্রণ</h4>
           <p>ঘাড় ধরা শুরু, tummy time-এ মাথা কিছুটা তুলতে পারে, হাত-পা নড়াচড়া বাড়ে।</p>
         </div>
+
         <div class="milestone-card reveal">
           <div class="mile-icon">🔄</div>
           <div class="age">৪–৬ মাস</div>
           <h4>রোল ও সাপোর্টেড সিটিং</h4>
           <p>পাশ ফিরতে পারে, সহায়তা নিয়ে বসতে শুরু করে, হাতে খেলনা ধরার আগ্রহ বাড়ে।</p>
         </div>
+
         <div class="milestone-card reveal">
           <div class="mile-icon">🪑</div>
           <div class="age">৭–৯ মাস</div>
           <h4>স্বাধীন বসা ও হামাগুড়ি প্রস্তুতি</h4>
           <p>নিজে বসে থাকতে পারে, সামনে ঝুঁকে খেলতে পারে, হামাগুড়ির চেষ্টা করতে পারে।</p>
         </div>
+
         <div class="milestone-card reveal">
           <div class="mile-icon">🧍</div>
           <div class="age">১০–১২ মাস</div>
           <h4>দাঁড়ানো ও ফার্নিচার ধরে চলা</h4>
           <p>দাঁড়ানোর চেষ্টা, ধরে ধরে হাঁটা, বসা থেকে দাঁড়ানোর দিকে এগোনো।</p>
         </div>
+
         <div class="milestone-card reveal">
           <div class="mile-icon">👣</div>
           <div class="age">১২–১৮ মাস</div>
           <h4>স্বাধীন হাঁটা</h4>
           <p>স্বাধীনভাবে হাঁটা শুরু, বসা-দাঁড়ানো পরিবর্তন, খেলায় অংশগ্রহণ বাড়ে।</p>
         </div>
+
         <div class="milestone-card reveal">
           <div class="mile-icon">⚽</div>
           <div class="age">১৮–২৪ মাস</div>
@@ -1336,6 +1386,7 @@
           <div class="iconbox">🏥</div>
           <h4>Dr. M.R. Khan Medical Center</h4>
           <p>Department of Physiotherapy and Rehabilitation</p>
+
           <div class="timing-list">
             <div class="timing-row"><strong>শনিবার</strong><span>বিকেল ৫টা – রাত ৯টা</span></div>
             <div class="timing-row"><strong>রবিবার</strong><span>বিকেল ৫টা – রাত ৯টা</span></div>
@@ -1351,6 +1402,7 @@
           <div class="iconbox">🏥</div>
           <h4>ঋশিল্পী ফিজিওথেরাপি এন্ড রিহ্যাবিলিটেশন সেন্টার</h4>
           <p>খুলনা</p>
+
           <div class="timing-list">
             <div class="timing-row"><strong>বৃহস্পতিবার</strong><span>বিকেল ৪টা – রাত ৯টা</span></div>
             <div class="timing-row"><strong>শুক্রবার</strong><span>সকাল ৯টা – বিকেল ৫টা</span></div>
@@ -1364,7 +1416,7 @@
   <section class="section" id="education" style="background:linear-gradient(180deg,#ffffff,#f8fbff);">
     <div class="container">
       <div class="section-head reveal">
-        <div class="eyebrow">অভিভাবক নির্দেশনা</div>
+        <div class="eyebrow">Parent Education</div>
         <h2>শিশুর বিকাশ ও পেডিয়াট্রিক ফিজিওথেরাপি</h2>
         <p>শিশুর মোটর ডেভেলপমেন্ট, ব্যালান্স, posture এবং functional mobility উন্নয়নে প্রাথমিক সচেতনতা গুরুত্বপূর্ণ।</p>
       </div>
@@ -1393,7 +1445,7 @@
   <section class="section" id="redflag">
     <div class="container">
       <div class="section-head reveal">
-        <div class="eyebrow">সতর্কতার লক্ষণ</div>
+        <div class="eyebrow">Red Flag Signs</div>
         <h2>শিশুর বিকাশে গুরুত্বপূর্ণ সতর্কতার লক্ষণ</h2>
         <p>নিচের লক্ষণগুলোর যেকোনোটি দেখা গেলে দ্রুত মূল্যায়ন করা উপকারী হতে পারে।</p>
       </div>
@@ -1474,8 +1526,10 @@
           <p style="opacity:.96;">আজই একটি assessment appointment নিন এবং professional pediatric rehabilitation guidance শুরু করুন। Early support অনেক সময় better progress-এর সুযোগ তৈরি করে।</p>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-start;align-items:center;">
-          <a class="btn btn-light" href="#appointment">📅 অ্যাপয়েন্টমেন্ট বুক করুন</a>
-          <a class="btn btn-outline" href="#location"><i class="fa-solid fa-location-dot"></i> লোকেশন দেখুন</a>
+          <a class="btn btn-light" href="#appointment">📅 Assessment Booking</a>
+          <a class="btn btn-outline" href="https://wa.me/8801842739654" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-whatsapp"></i> WhatsAppে কথা বলুন
+          </a>
         </div>
       </div>
     </div>
@@ -1490,7 +1544,7 @@
           <p style="color:var(--muted);margin-bottom:18px;">
             বিকাশে দেরি, গুরুত্বপূর্ণ red flag sign এবং early assessment-এর প্রয়োজনীয়তা সম্পর্কে একটি PDF গাইড।
           </p>
-          <a class="btn btn-danger" href="assets/parent-guide.pdf" download>
+          <a class="btn btn-danger" href="assets/parent-guide.pdf" download aria-label="Parent guide PDF download">
             <i class="fa-solid fa-file-arrow-down"></i> PDF গাইড ডাউনলোড করুন
           </a>
         </div>
@@ -1576,7 +1630,7 @@
           </div>
         </div>
 
-        <div class="review-nav">
+        <div class="review-nav" id="reviewDots">
           <button class="review-dot active" onclick="goToSlide(0)" aria-label="Review 1"></button>
           <button class="review-dot" onclick="goToSlide(1)" aria-label="Review 2"></button>
           <button class="review-dot" onclick="goToSlide(2)" aria-label="Review 3"></button>
@@ -1669,7 +1723,7 @@
           <h4>Dr. M.R. Khan Medical Center</h4>
           <p>Department of Physiotherapy and Rehabilitation</p>
 
-          <div class="map-card">
+          <div class="map-card" style="padding:14px;margin-top:16px;">
             <iframe
               class="map-frame"
               src="https://www.google.com/maps?q=Dr.%20M.%20R.%20Khan%20Medical%20Center&output=embed"
@@ -1688,6 +1742,9 @@
             <a class="btn btn-primary" href="https://maps.app.goo.gl/nybsAdxJusiziKxa8?g_st=ac" target="_blank" rel="noopener noreferrer">
               <i class="fa-solid fa-location-dot"></i> Google Maps
             </a>
+            <a class="btn btn-success" href="tel:01842739654">
+              <i class="fa-solid fa-phone"></i> কল করুন
+            </a>
           </div>
         </div>
 
@@ -1696,7 +1753,7 @@
           <h4>ঋশিল্পী ফিজিওথেরাপি এন্ড রিহ্যাবিলিটেশন সেন্টার</h4>
           <p>খুলনা</p>
 
-          <div class="map-card">
+          <div class="map-card" style="padding:14px;margin-top:16px;">
             <iframe
               class="map-frame"
               src="https://www.google.com/maps?q=Rishilpi%20Physiotherapy%20and%20Rehabilitation%20Center%20Khulna&output=embed"
@@ -1715,6 +1772,9 @@
           <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;">
             <a class="btn btn-primary" href="https://maps.app.goo.gl/tNNopRVR6BxFe8fM9?g_st=ac" target="_blank" rel="noopener noreferrer">
               <i class="fa-solid fa-location-dot"></i> Google Maps
+            </a>
+            <a class="btn btn-success" href="tel:01842739654">
+              <i class="fa-solid fa-phone"></i> কল করুন
             </a>
           </div>
         </div>
@@ -1758,6 +1818,9 @@
           <a class="btn btn-success" href="https://wa.me/8801842739654" target="_blank" rel="noopener noreferrer">
             <i class="fa-brands fa-whatsapp"></i> WhatsApp করুন
           </a>
+          <a class="btn btn-primary" href="tel:01842739654">
+            <i class="fa-solid fa-phone"></i> কল করুন
+          </a>
           <a class="btn btn-dark" href="#appointment">
             <i class="fa-solid fa-calendar-check"></i> অ্যাপয়েন্টমেন্ট
           </a>
@@ -1792,8 +1855,8 @@
             <li><a href="#about">আমার সম্পর্কে</a></li>
             <li><a href="#services">সেবা</a></li>
             <li><a href="#milestone">মাইলস্টোন</a></li>
-            <li><a href="#education">অভিভাবক নির্দেশনা</a></li>
-            <li><a href="#redflag">সতর্কতার লক্ষণ</a></li>
+            <li><a href="#education">Parent Education</a></li>
+            <li><a href="#redflag">Red Flags</a></li>
             <li><a href="#symptom">সহায়ক নির্দেশনা</a></li>
             <li><a href="#appointment">অ্যাপয়েন্টমেন্ট</a></li>
             <li><a href="#location">লোকেশন</a></li>
@@ -1832,22 +1895,34 @@
     </div>
   </footer>
 
-  <div class="mobile-booking-bar">
-    <div class="mobile-booking-inner">
-      <a class="btn booking-btn" href="#appointment">
-        <i class="fa-solid fa-stethoscope"></i> 📅 অ্যাপয়েন্টমেন্ট বুক করুন
+  <div class="float-wrap">
+    <a class="float-btn wa" href="https://wa.me/8801842739654" target="_blank" rel="noopener noreferrer" title="WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <div id="waBubble" class="chat-bubble-wrap">
+      <a class="chat-bubble" href="https://wa.me/8801842739654" target="_blank" rel="noopener noreferrer">
+        <div class="chat-top">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>WhatsApp সহায়তা</span>
+        </div>
+        <div id="typedMessage" class="chat-message"></div>
+        <div class="typing" id="typingDots">
+          <span></span><span></span><span></span>
+        </div>
       </a>
     </div>
+
+    <a class="float-btn call" href="tel:01842739654" title="Call">
+      <i class="fa-solid fa-phone"></i>
+    </a>
   </div>
 
-  <div class="success-modal" id="successModal">
-    <div class="success-box">
-      <div class="success-icon"><i class="fa-solid fa-check"></i></div>
-      <h3>অনুরোধ প্রস্তুত হয়েছে</h3>
-      <p>এখন WhatsApp খুলে আপনার অ্যাপয়েন্টমেন্ট বার্তাটি পাঠিয়ে দিন।</p>
-      <div class="success-actions">
-        <button class="btn btn-dark" onclick="closeSuccessModal()">বন্ধ করুন</button>
-      </div>
+  <div class="mobile-booking-bar">
+    <div class="mobile-booking-inner single">
+      <a class="btn booking-btn" href="#appointment">
+        <i class="fa-solid fa-stethoscope"></i> অ্যাপয়েন্টমেন্ট বুক করুন
+      </a>
     </div>
   </div>
 
@@ -1855,7 +1930,6 @@
     const body = document.body;
     const menu = document.getElementById('mobileMenu');
     const menuBtn = document.querySelector('.menu-toggle');
-    const successModal = document.getElementById('successModal');
 
     function toggleMenu(){
       const isOpen = menu.classList.toggle('show');
@@ -1869,28 +1943,16 @@
       body.classList.remove('menu-open');
     }
 
-    function openSuccessModal(){
-      successModal.classList.add('show');
-    }
-
-    function closeSuccessModal(){
-      successModal.classList.remove('show');
-    }
-
     document.addEventListener('click', function(e){
       const nav = document.querySelector('.nav');
       if (!nav.contains(e.target)) {
         closeMenu();
-      }
-      if(e.target === successModal){
-        closeSuccessModal();
       }
     });
 
     document.addEventListener('keydown', function(e){
       if(e.key === 'Escape'){
         closeMenu();
-        closeSuccessModal();
       }
     });
 
@@ -1926,12 +1988,8 @@
 সেবা: ${service}
 সমস্যা: ${problem || 'উল্লেখ করা হয়নি'}`;
 
-      openSuccessModal();
-
-      setTimeout(() => {
-        const url = `https://wa.me/8801842739654?text=${encodeURIComponent(message)}`;
-        window.open(url, '_blank', 'noopener');
-      }, 500);
+      const url = `https://wa.me/8801842739654?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank', 'noopener');
     }
 
     function checkSymptom(){
@@ -2071,6 +2129,52 @@
       document.getElementById('pageLoader').classList.add('hide');
       document.body.classList.remove('loading');
       document.getElementById('year').textContent = new Date().getFullYear();
+
+      const bubble = document.getElementById('waBubble');
+      const typedMessage = document.getElementById('typedMessage');
+      const typingDots = document.getElementById('typingDots');
+      const fullText = 'আপনার শিশুর সমস্যা জানাতে এখানে চাপুন';
+      let typingRunning = false;
+
+      function showTypingBubble() {
+        if (typingRunning) return;
+        typingRunning = true;
+
+        bubble.classList.add('show');
+        typedMessage.textContent = '';
+        typingDots.style.display = 'flex';
+
+        let i = 0;
+
+        const typingInterval = setInterval(function () {
+          if(i < fullText.length){
+            typedMessage.textContent += fullText.charAt(i);
+            i++;
+          } else {
+            clearInterval(typingInterval);
+
+            setTimeout(function () {
+              typingDots.style.display = 'none';
+            }, 300);
+
+            setTimeout(function () {
+              bubble.classList.remove('show');
+              typedMessage.textContent = '';
+              typingDots.style.display = 'flex';
+              typingRunning = false;
+            }, 2500);
+          }
+        }, 45);
+      }
+
+      setTimeout(showTypingBubble, 3000);
+
+      setInterval(function () {
+        if (!bubble.classList.contains('show') && !typingRunning) {
+          showTypingBubble();
+        }
+      }, 30000);
+
       startAutoSlide();
     });
 
@@ -2091,7 +2195,7 @@
       const scrollY = window.pageYOffset;
       sections.forEach(section => {
         const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 150;
+        const sectionTop = section.offsetTop - 130;
         const sectionId = section.getAttribute('id');
 
         if(scrollY >= sectionTop && scrollY < sectionTop + sectionHeight){
