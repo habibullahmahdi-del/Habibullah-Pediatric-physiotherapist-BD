@@ -193,11 +193,11 @@
       position:sticky;
       top:0;
       z-index:1003;
-      min-height:46px;
+      min-height:42px;
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:10px 15px;
+      padding:7px 14px;
       background:linear-gradient(90deg,#25D366,#06b6d4);
       box-shadow:0 8px 20px rgba(0,0,0,.08);
       text-align:center;
@@ -205,17 +205,17 @@
     .sticky-bar a{
       color:#fff;
       font-weight:700;
-      font-size:.95rem;
+      font-size:.90rem;
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      gap:8px;
+      gap:7px;
       width:100%;
       max-width:980px;
-      line-height:1.4;
+      line-height:1.35;
     }
     .sticky-bar i{
-      font-size:1rem;
+      font-size:.98rem;
       flex-shrink:0;
     }
     #stickyMessage{
@@ -246,7 +246,7 @@
 
     .navbar{
       position:sticky;
-      top:46px;
+      top:42px;
       z-index:1000;
       background:rgba(255,255,255,.92);
       backdrop-filter:blur(12px);
@@ -959,6 +959,11 @@
       font-size:18px;
     }
 
+    .nav-appointment-btn{
+      align-self:flex-end;
+      margin-top:8px;
+    }
+
     @media (max-width:1024px){
       .hero-grid,.grid-2,.cta-banner,.footer-grid,.timing-wrap,.pdf-card,.dual-map-grid,.today-card{grid-template-columns:1fr}
       .grid-3,.trust-grid{grid-template-columns:repeat(2,1fr)}
@@ -968,10 +973,11 @@
       .hero h1{font-size:2.35rem}
       .hero-stats{grid-template-columns:repeat(3,1fr)}
       .today-pills{justify-content:flex-start}
+      .nav-appointment-btn{margin-top:0;align-self:center}
     }
 
     @media (max-width:680px){
-      .navbar{top:46px}
+      .navbar{top:42px}
       .hero{padding:74px 0 58px}
       .hero h1{font-size:1.95rem}
       .grid-3,.grid-4,.trust-grid,.hero-stats,.education-grid,.flag-grid,.contact-mini-grid{grid-template-columns:1fr}
@@ -1012,11 +1018,11 @@
       .nav > .btn.btn-primary{display:none}
       .mobile-booking-bar{display:block}
       .sticky-bar{
-        min-height:44px;
-        padding:8px 12px;
+        min-height:40px;
+        padding:6px 10px;
       }
       .sticky-bar a{
-        font-size:.84rem;
+        font-size:.81rem;
         gap:6px;
       }
       .topbar .container{
@@ -1059,8 +1065,8 @@
         <a href="#services" class="nav-link" onclick="closeMenu()">সেবা</a>
         <a href="#milestone" class="nav-link" onclick="closeMenu()">মাইলস্টোন</a>
         <a href="#timing" class="nav-link" onclick="closeMenu()">সময়</a>
-        <a href="#education" class="nav-link" onclick="closeMenu()">Parent Education</a>
-        <a href="#redflag" class="nav-link" onclick="closeMenu()">Red Flags</a>
+        <a href="#education" class="nav-link" onclick="closeMenu()">অভিভাবক নির্দেশনা</a>
+        <a href="#redflag" class="nav-link" onclick="closeMenu()">সতর্কতার লক্ষণ</a>
         <a href="#symptom" class="nav-link" onclick="closeMenu()">সহায়ক নির্দেশনা</a>
         <a href="#faq" class="nav-link" onclick="closeMenu()">FAQ</a>
         <a href="#reviews" class="nav-link" onclick="closeMenu()">মতামত</a>
@@ -1073,7 +1079,7 @@
         <i class="fa-solid fa-bars"></i>
       </button>
 
-      <a class="btn btn-primary" href="#appointment">অ্যাপয়েন্টমেন্ট</a>
+      <a class="btn btn-primary nav-appointment-btn" href="#appointment">অ্যাপয়েন্টমেন্ট</a>
     </div>
   </header>
 
@@ -1406,7 +1412,7 @@
   <section class="section" id="education" style="background:linear-gradient(180deg,#ffffff,#f8fbff);">
     <div class="container">
       <div class="section-head reveal">
-        <div class="eyebrow">Parent Education</div>
+        <div class="eyebrow">অভিভাবক নির্দেশনা</div>
         <h2>শিশুর বিকাশ ও পেডিয়াট্রিক ফিজিওথেরাপি</h2>
         <p>শিশুর মোটর ডেভেলপমেন্ট, ব্যালান্স, posture এবং functional mobility উন্নয়নে প্রাথমিক সচেতনতা গুরুত্বপূর্ণ।</p>
       </div>
@@ -1435,7 +1441,7 @@
   <section class="section" id="redflag">
     <div class="container">
       <div class="section-head reveal">
-        <div class="eyebrow">Red Flag Signs</div>
+        <div class="eyebrow">সতর্কতার লক্ষণ</div>
         <h2>শিশুর বিকাশে গুরুত্বপূর্ণ সতর্কতার লক্ষণ</h2>
         <p>নিচের লক্ষণগুলোর যেকোনোটি দেখা গেলে দ্রুত মূল্যায়ন করা উপকারী হতে পারে।</p>
       </div>
@@ -1845,8 +1851,8 @@
             <li><a href="#about">আমার সম্পর্কে</a></li>
             <li><a href="#services">সেবা</a></li>
             <li><a href="#milestone">মাইলস্টোন</a></li>
-            <li><a href="#education">Parent Education</a></li>
-            <li><a href="#redflag">Red Flags</a></li>
+            <li><a href="#education">অভিভাবক নির্দেশনা</a></li>
+            <li><a href="#redflag">সতর্কতার লক্ষণ</a></li>
             <li><a href="#symptom">সহায়ক নির্দেশনা</a></li>
             <li><a href="#appointment">অ্যাপয়েন্টমেন্ট</a></li>
             <li><a href="#location">লোকেশন</a></li>
