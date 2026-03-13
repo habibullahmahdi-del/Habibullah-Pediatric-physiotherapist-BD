@@ -994,11 +994,17 @@
       .grid-3,.grid-4,.trust-grid,.hero-stats,.education-grid,.flag-grid,.contact-mini-grid{grid-template-columns:1fr}
       .section{padding:74px 0}
       .section-head h2{font-size:1.82rem}
-      .float-wrap{
+      .float-btn.wa{
+position:fixed;
 right:12px;
-bottom:150px;
-display:flex;
-flex-direction:column;}
+top:70px;
+}
+
+.call-btn{
+position:fixed;
+right:12px;
+bottom:90px;
+}
       .chat-bubble{min-width:auto;max-width:220px;padding:10px 12px}
       .chat-message{font-size:13px;min-height:38px}
       .float-btn{width:54px;height:54px}
@@ -1029,6 +1035,16 @@ flex-direction:column;}
       .nav > .btn.btn-primary{display:none}
       .mobile-booking-bar{display:block}
     }
+
+.sticky-bar{
+position:sticky;
+top:0;
+min-height:60px;
+display:flex;
+align-items:center;
+justify-content:flex-end;
+padding:0 15px;
+}
   </style>
 </head>
 <body class="loading">
@@ -1038,9 +1054,6 @@ flex-direction:column;}
     <div class="loader-text">হাবিবুল্লাহ | পেডিয়াট্রিক ফিজিওথেরাপিস্ট</div>
     <div class="loader-bar"><span></span></div>
   </div>
-
-  
-<div class="sticky-bar"></div>
 
 </div>
   <div class="topbar">
