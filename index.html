@@ -18,10 +18,19 @@
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="bn_BD" />
   <meta property="og:site_name" content="হাবিবুল্লাহ | পেডিয়াট্রিক ফিজিওথেরাপিস্ট" />
+  <meta property="og:image" content="assets/preview.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="হাবিবুল্লাহ | পেডিয়াট্রিক ফিজিওথেরাপিস্ট" />
   <meta name="twitter:description" content="শিশুর বিকাশ, মোটর ফাংশন, ব্যালান্স এবং পরিবার-কেন্দ্রিক পুনর্বাসনে পেশাদার সহায়তা।" />
+  <meta name="twitter:image" content="assets/preview.jpg" />
+
+  <meta name="geo.region" content="BD-KH" />
+  <meta name="geo.placename" content="Khulna" />
+  <meta name="geo.position" content="22.8456;89.5403" />
+  <meta name="ICBM" content="22.8456, 89.5403" />
 
   <link rel="icon" type="image/png" href="assets/favicon.png" />
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
@@ -209,7 +218,7 @@
 
     .navbar{
       position:sticky;
-      top:44px;
+      top:60px;
       z-index:1000;
       background:rgba(255,255,255,.92);
       backdrop-filter:blur(12px);
@@ -930,10 +939,36 @@
       grid-template-columns:1fr 1fr;
       gap:10px;
     }
+    .mobile-booking-inner.single{
+      grid-template-columns:1fr;
+    }
     .mobile-booking-bar a{
       min-height:48px;
       font-size:.93rem;
       border-radius:14px;
+    }
+
+    .booking-btn{
+      width:100%;
+      min-height:54px;
+      font-size:1rem;
+      border-radius:16px;
+      background:linear-gradient(135deg,#4f46e5,#06b6d4);
+      color:#fff;
+      font-weight:700;
+      box-shadow:0 12px 28px rgba(79,70,229,.35);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      transition:.25s ease;
+    }
+    .booking-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 16px 36px rgba(79,70,229,.45);
+    }
+    .booking-btn i{
+      font-size:18px;
     }
 
     @keyframes typingBounce{
@@ -953,7 +988,7 @@
     }
 
     @media (max-width:680px){
-      .navbar{top:42px}
+      .navbar{top:60px}
       .hero{padding:74px 0 58px}
       .hero h1{font-size:1.95rem}
       .grid-3,.grid-4,.trust-grid,.hero-stats,.education-grid,.flag-grid,.contact-mini-grid{grid-template-columns:1fr}
@@ -1827,7 +1862,7 @@
           </ul>
 
           <div class="social-row">
-            <a href="#" aria-label="Facebook">
+            <a href="https://www.facebook.com/share/17MEWNWpQ2/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <i class="fa-brands fa-facebook-f"></i>
             </a>
             <a href="#" aria-label="YouTube">
@@ -1874,12 +1909,9 @@
   </div>
 
   <div class="mobile-booking-bar">
-    <div class="mobile-booking-inner">
-      <a class="btn btn-success" href="https://wa.me/8801842739654" target="_blank" rel="noopener noreferrer">
-        <i class="fa-brands fa-whatsapp"></i> WhatsApp
-      </a>
-      <a class="btn btn-primary" href="#appointment">
-        <i class="fa-solid fa-calendar-check"></i> বুকিং
+    <div class="mobile-booking-inner single">
+      <a class="btn booking-btn" href="#appointment">
+        <i class="fa-solid fa-stethoscope"></i> অ্যাপয়েন্টমেন্ট বুক করুন
       </a>
     </div>
   </div>
