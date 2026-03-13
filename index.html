@@ -193,11 +193,11 @@
       position:sticky;
       top:0;
       z-index:1003;
-      min-height:42px;
+      height:48px;
       display:flex;
       align-items:center;
       justify-content:center;
-      padding:7px 14px;
+      padding:0 14px;
       background:linear-gradient(90deg,#25D366,#06b6d4);
       box-shadow:0 8px 20px rgba(0,0,0,.08);
       text-align:center;
@@ -206,20 +206,23 @@
       color:#fff;
       font-weight:700;
       font-size:.90rem;
-      display:inline-flex;
+      display:flex;
       align-items:center;
       justify-content:center;
       gap:7px;
       width:100%;
       max-width:980px;
-      line-height:1.35;
+      height:100%;
+      line-height:1.2;
     }
     .sticky-bar i{
-      font-size:.98rem;
+      font-size:1rem;
       flex-shrink:0;
     }
     #stickyMessage{
-      display:inline-block;
+      display:block;
+      line-height:1.2;
+      min-height:1.2em;
       transition:opacity .3s ease, transform .3s ease;
     }
     #stickyMessage.fade-out{
@@ -246,7 +249,7 @@
 
     .navbar{
       position:sticky;
-      top:42px;
+      top:48px;
       z-index:1000;
       background:rgba(255,255,255,.92);
       backdrop-filter:blur(12px);
@@ -810,8 +813,8 @@
     .footer{
       background:#1e1b4b;
       color:#dbeafe;
-      padding:66px 0 110px;
-      margin-top:20px;
+      padding:56px 0 92px;
+      margin-top:0;
     }
     .footer-grid{
       display:grid;
@@ -918,7 +921,7 @@
       z-index:1004;
       background:rgba(15,23,42,.94);
       backdrop-filter:blur(12px);
-      padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+      padding:8px 12px calc(8px + env(safe-area-inset-bottom));
       display:none;
       box-shadow:0 -10px 28px rgba(0,0,0,.12);
     }
@@ -961,7 +964,9 @@
 
     .nav-appointment-btn{
       align-self:flex-end;
-      margin-top:8px;
+      margin-top:0;
+      position:relative;
+      top:8px;
     }
 
     @media (max-width:1024px){
@@ -973,11 +978,15 @@
       .hero h1{font-size:2.35rem}
       .hero-stats{grid-template-columns:repeat(3,1fr)}
       .today-pills{justify-content:flex-start}
-      .nav-appointment-btn{margin-top:0;align-self:center}
+      .nav-appointment-btn{
+        margin-top:0;
+        align-self:center;
+        top:4px;
+      }
     }
 
     @media (max-width:680px){
-      .navbar{top:42px}
+      .navbar{top:48px}
       .hero{padding:74px 0 58px}
       .hero h1{font-size:1.95rem}
       .grid-3,.grid-4,.trust-grid,.hero-stats,.education-grid,.flag-grid,.contact-mini-grid{grid-template-columns:1fr}
@@ -1018,12 +1027,13 @@
       .nav > .btn.btn-primary{display:none}
       .mobile-booking-bar{display:block}
       .sticky-bar{
-        min-height:40px;
-        padding:6px 10px;
+        height:48px;
+        padding:0 10px;
       }
       .sticky-bar a{
         font-size:.81rem;
         gap:6px;
+        line-height:1.15;
       }
       .topbar .container{
         font-size:.84rem;
