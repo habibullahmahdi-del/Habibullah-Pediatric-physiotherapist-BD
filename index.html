@@ -68,6 +68,24 @@
   }
   </script>
 
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ProfessionalService",
+    "name":"হাবিবুল্লাহ | পেডিয়াট্রিক ফিজিওথেরাপিস্ট",
+    "image":"https://habibullahmahdi-del.github.io/Habibullah-Pediatric-physiotherapist-BD/assets/habib.jpg",
+    "telephone":"+8801842739654",
+    "areaServed":"Khulna, Bangladesh",
+    "address":{
+      "@type":"PostalAddress",
+      "addressLocality":"Khulna",
+      "addressRegion":"Khulna",
+      "addressCountry":"BD"
+    },
+    "url":"https://habibullahmahdi-del.github.io/Habibullah-Pediatric-physiotherapist-BD/"
+  }
+  </script>
+
   <style>
     :root{
       --primary:#4f46e5;
@@ -282,11 +300,12 @@
       flex:1;
       min-width:0;
     }
-    .brand h1{
+    .site-title{
       font-size:1.02rem;
       color:var(--dark);
       line-height:1.2;
       margin-bottom:2px;
+      font-weight:700;
     }
     .brand span{
       display:block;
@@ -298,12 +317,13 @@
     .menu{
       display:flex;
       flex-wrap:wrap;
-      gap:20px;
+      gap:16px;
       align-items:center;
+      justify-content:flex-end;
     }
     .menu a{
       font-weight:700;
-      font-size:.95rem;
+      font-size:.88rem;
       color:#334155;
       position:relative;
       padding:6px 0;
@@ -415,8 +435,8 @@
     .hero p{font-size:1.06rem;max-width:680px;opacity:.98;margin-bottom:24px}
 
     #heroText{
-      min-height:150px;
-      max-height:150px;
+      min-height:165px;
+      max-height:165px;
       overflow:hidden;
       line-height:1.6;
       transition:opacity .35s ease;
@@ -480,22 +500,22 @@
     .profile::before{
       content:"";
       position:absolute;
-      width:280px;
-      height:280px;
+      width:310px;
+      height:310px;
       border-radius:50%;
       left:50%;
-      top:-10px;
+      top:-12px;
       transform:translateX(-50%);
       background:radial-gradient(circle, rgba(255,255,255,.22) 0%, rgba(255,255,255,.08) 45%, transparent 72%);
       filter:blur(8px);
       z-index:-1;
     }
     .profile img{
-      width:240px;
-      height:240px;
+      width:270px;
+      height:270px;
       border-radius:50%;
       object-fit:cover;
-      object-position:center;
+      object-position:center top;
       border:6px solid rgba(255,255,255,.85);
       background:#fff;
       margin:0 auto 14px;
@@ -1060,6 +1080,9 @@
     }
 
     @media (max-width:680px){
+      .topbar{
+        display:none;
+      }
       .navbar{top:48px}
       .hero{padding:20px 0 58px}
       .hero h1{font-size:1.95rem}
@@ -1138,10 +1161,7 @@
         gap:6px;
         line-height:1.15;
       }
-      .topbar .container{
-        font-size:.84rem;
-      }
-      .brand h1{
+      .brand .site-title{
         font-size:1.02rem;
         line-height:1.2;
         margin-bottom:2px;
@@ -1151,13 +1171,13 @@
         line-height:1.35;
       }
       .profile::before{
-        width:250px;
-        height:250px;
+        width:255px;
+        height:255px;
         top:-6px;
       }
       .profile img{
-        width:220px;
-        height:220px;
+        width:230px;
+        height:230px;
       }
 
       #heroText{
@@ -1192,7 +1212,7 @@
   <header class="navbar" id="navbar">
     <div class="container nav">
       <div class="brand">
-        <h1>হাবিবুল্লাহ | পেডিয়াট্রিক ফিজিওথেরাপিস্ট</h1>
+        <div class="site-title">হাবিবুল্লাহ | পেডিয়াট্রিক ফিজিওথেরাপিস্ট</div>
         <span>শিশুর চলাফেরা, বিকাশ ও কার্যক্ষমতা উন্নয়নে পেশাদার সহায়তা</span>
       </div>
 
@@ -1721,7 +1741,7 @@
   <section class="section" id="reviews" style="background:linear-gradient(180deg,#ffffff,#f8fbff);">
     <div class="container">
       <div class="section-head reveal">
-        <div class="eyebrow">নমুনা মতামত</div>
+        <div class="eyebrow">সেবার অভিজ্ঞতার নমুনা</div>
         <h2>বিশ্বাস, ভরসা ও ইতিবাচক অভিজ্ঞতার উদাহরণ</h2>
         <p>শিশুবান্ধব সেবা, পরিষ্কার নির্দেশনা এবং পরিবার-কেন্দ্রিক সহযোগিতার ভিত্তিতে সম্ভাব্য অভিজ্ঞতার কিছু নমুনা এখানে তুলে ধরা হয়েছে।</p>
       </div>
@@ -1820,6 +1840,14 @@
                   <option>সেরিব্রাল পালসি সহায়তা</option>
                   <option>বিকাশে দেরির সহায়তা</option>
                   <option>ব্যালান্স ও কার্যক্ষমতা উন্নয়ন</option>
+                </select>
+              </div>
+
+              <div class="input-group full">
+                <label for="chamber">চেম্বার নির্বাচন করুন</label>
+                <select id="chamber">
+                  <option>Dr. M.R. Khan Medical Center</option>
+                  <option>ঋশিল্পী ফিজিওথেরাপি এন্ড রিহ্যাবিলিটেশন সেন্টার</option>
                 </select>
               </div>
 
@@ -1973,7 +2001,7 @@
           <div class="footer-contact-card">
             <p><strong style="color:#fff;">ফোন:</strong> 01842-739654</p>
             <p><strong style="color:#fff;">WhatsApp:</strong> 01842-739654</p>
-            <p><strong style="color:#fff;">চেম্বার:</strong> Dr. M.R. Khan Medical Center ও ঋশিল্পী ফিজিওথেরাপি এন্ড রিহ্যাবিলিটেশন সেন্টার</p>
+            <p><strong style="color:#fff;">চেম্বার:</strong> Dr. M.R. Khan Medical Center ও ঋশিল্পী ফিজিওথেরাপি এন্ড রিহাবিলিটেশন সেন্টার</p>
             <p><strong style="color:#fff;">সময়:</strong> Dr. M.R. Khan Medical Center: শনিবার–বুধবার, বিকেল ৫টা–রাত ৯টা | ঋশিল্পী: বৃহস্পতিবার বিকেল ৪টা–রাত ৯টা, শুক্রবার সকাল ৯টা–বিকেল ৫টা</p>
           </div>
         </div>
@@ -2075,6 +2103,7 @@
       const phone = document.getElementById('phone').value.trim();
       const age = document.getElementById('age').value.trim();
       const service = document.getElementById('service').value;
+      const chamber = document.getElementById('chamber').value;
       const problem = document.getElementById('problem').value.trim();
 
       const bdPhoneRegex = /^(?:\+8801|01)[3-9]\d{8}$/;
@@ -2100,12 +2129,17 @@
 মোবাইল নম্বর: ${phone}
 শিশুর বয়স: ${age || 'উল্লেখ করা হয়নি'}
 সেবা: ${service}
+পছন্দের চেম্বার: ${chamber}
 সমস্যার বিবরণ: ${problem || 'উল্লেখ করা হয়নি'}
 
 অনুগ্রহ করে সুবিধাজনক সময় জানাবেন।`;
 
       const url = `https://wa.me/8801842739654?text=${encodeURIComponent(message)}`;
-      window.open(url, '_blank', 'noopener');
+      const win = window.open(url, '_blank', 'noopener');
+
+      if(!win){
+        window.location.href = url;
+      }
     }
 
     function checkSymptom(){
@@ -2298,7 +2332,7 @@
       heroTextEl.style.transition = 'opacity .35s ease';
       heroTextEl.textContent = heroMessages[0];
       setInterval(changeStickyMessage, 5000);
-      setInterval(changeHeroText, 12000);
+      setInterval(changeHeroText, 8000);
       startAutoSlide();
     });
 
