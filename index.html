@@ -38,6 +38,8 @@
   <link rel="icon" type="image/png" href="https://habibullahmahdi-del.github.io/Habibullah-Pediatric-physiotherapist-BD/assets/favicon.png" />
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <script type="application/ld+json">
@@ -109,10 +111,11 @@
     html{scroll-behavior:smooth}
     html,body{max-width:100%}
     body{
-      font-family:Arial, Helvetica, sans-serif;
+      font-family:'Hind Siliguri', Arial, sans-serif;
       background:linear-gradient(180deg,#f8fbff,#f0f9ff);
       color:var(--text);
-      line-height:1.65;
+      line-height:1.72;
+      font-size:17px;
       overflow-x:hidden;
     }
     body.loading{overflow:hidden}
@@ -125,6 +128,14 @@
     img,iframe{border:0}
     button,input,select,textarea{font:inherit}
     ::selection{background:#c7d2fe;color:#1e1b4b}
+
+    h1,h2,h3,h4,h5,h6,
+    .site-title,
+    .eyebrow,
+    .btn,
+    .menu a{
+      font-family:'Hind Siliguri', Arial, sans-serif;
+    }
 
     .container{width:min(var(--max),92%);margin:auto}
     .section{padding:80px 0}
@@ -146,7 +157,19 @@
       color:var(--dark);
       margin-bottom:12px;
     }
-    .section-head p{color:var(--muted)}
+    .section-head p,
+    .card p,
+    .service p,
+    .milestone-card p,
+    .why-card p,
+    .edu-card p,
+    .faq-item p,
+    .contact-mini-card p,
+    .today-main p{
+      color:var(--muted);
+      font-size:1.02rem;
+      line-height:1.75;
+    }
 
     .reveal{
       opacity:0;
@@ -425,20 +448,32 @@
 
     .hero-grid{
       display:grid;
-      grid-template-columns:1.08fr .92fr;
-      gap:34px;
+      grid-template-columns:1.05fr .95fr;
+      gap:48px;
       align-items:center;
       position:relative;
       z-index:1;
     }
-    .hero h1{font-size:3rem;line-height:1.12;margin-bottom:16px}
-    .hero p{font-size:1.06rem;max-width:680px;opacity:.98;margin-bottom:24px}
+    .hero h1{
+      font-size:3.45rem;
+      line-height:1.14;
+      margin-bottom:18px;
+      max-width:760px;
+      letter-spacing:-0.4px;
+    }
+    .hero p{
+      font-size:1.14rem;
+      max-width:640px;
+      opacity:.98;
+      margin-bottom:26px;
+      line-height:1.78;
+    }
 
     #heroText{
-      min-height:165px;
-      max-height:165px;
-      overflow:hidden;
-      line-height:1.6;
+      min-height:150px;
+      max-height:none;
+      overflow:visible;
+      line-height:1.72;
       transition:opacity .35s ease;
     }
 
@@ -477,12 +512,12 @@
     }
 
     .hero-card{
-      background:rgba(255,255,255,.14);
-      border:1px solid rgba(255,255,255,.18);
-      backdrop-filter:blur(14px);
-      border-radius:30px;
-      padding:28px;
-      box-shadow:0 22px 56px rgba(0,0,0,.16);
+      background:rgba(255,255,255,.15);
+      border:1px solid rgba(255,255,255,.20);
+      backdrop-filter:blur(16px);
+      border-radius:34px;
+      padding:34px 30px;
+      box-shadow:0 30px 80px rgba(0,0,0,.18);
       position:relative;
       overflow:hidden;
     }
@@ -500,26 +535,26 @@
     .profile::before{
       content:"";
       position:absolute;
-      width:310px;
-      height:310px;
+      width:350px;
+      height:350px;
       border-radius:50%;
       left:50%;
-      top:-12px;
+      top:-18px;
       transform:translateX(-50%);
-      background:radial-gradient(circle, rgba(255,255,255,.22) 0%, rgba(255,255,255,.08) 45%, transparent 72%);
-      filter:blur(8px);
+      background:radial-gradient(circle, rgba(255,255,255,.24) 0%, rgba(255,255,255,.10) 45%, transparent 72%);
+      filter:blur(10px);
       z-index:-1;
     }
     .profile img{
-      width:270px;
-      height:270px;
+      width:305px;
+      height:305px;
       border-radius:50%;
       object-fit:cover;
       object-position:center top;
-      border:6px solid rgba(255,255,255,.85);
+      border:6px solid rgba(255,255,255,.90);
       background:#fff;
-      margin:0 auto 14px;
-      box-shadow:0 18px 46px rgba(0,0,0,.28), 0 0 0 12px rgba(255,255,255,.08);
+      margin:0 auto 16px;
+      box-shadow:0 24px 60px rgba(0,0,0,.28), 0 0 0 14px rgba(255,255,255,.08);
     }
     .profile h3{font-size:1.7rem;margin-bottom:6px}
     .profile p{margin-top:10px;color:#dbeafe}
@@ -536,10 +571,12 @@
 
     .mini-grid{display:grid;gap:11px}
     .mini-item{
-      padding:12px 14px;
-      background:rgba(255,255,255,.14);
-      border-radius:16px;
-      font-size:.95rem;
+      padding:14px 16px;
+      background:rgba(255,255,255,.13);
+      border-radius:18px;
+      font-size:.98rem;
+      line-height:1.65;
+      border:1px solid rgba(255,255,255,.08);
     }
 
     .today-consult{
@@ -564,7 +601,6 @@
       font-size:1.15rem;
       margin-bottom:6px;
     }
-    .today-main p{color:var(--muted)}
     .today-pills{
       display:flex;
       flex-wrap:wrap;
@@ -600,18 +636,18 @@
 
     .card,.tile,.service,.step,.review-card,.milestone-card,.timing-card,.why-card,.faq-item,.edu-card,.flag-item,.contact-mini-card,.map-info-card{
       background:#fff;
-      border-radius:26px;
-      padding:26px;
-      box-shadow:var(--shadow);
+      border-radius:28px;
+      padding:28px;
+      box-shadow:0 20px 54px rgba(79,70,229,.10);
       border:1px solid #eef7ff;
       transition:transform .25s ease, box-shadow .25s ease;
     }
     .card:hover,.tile:hover,.milestone-card:hover,.why-card:hover,.timing-card:hover,.review-card:hover,.faq-item:hover,.edu-card:hover,.flag-item:hover,.contact-mini-card:hover,.map-info-card:hover{
-      transform:translateY(-5px);
-      box-shadow:0 26px 58px rgba(79,70,229,.14);
+      transform:translateY(-6px);
+      box-shadow:0 28px 64px rgba(79,70,229,.16);
     }
     .card h3,.tile h4,.service h3,.step h4,.milestone-card h4,.timing-card h4,.why-card h4,.faq-item h4,.edu-card h3,.contact-mini-card h4,.map-info-card h4{color:var(--dark)}
-    .card p,.tile p,.service p,.step p,.milestone-card p,.timing-card p,.why-card p,.faq-item p,.edu-card p,.contact-mini-card p,.map-info-card p{color:var(--muted)}
+    .tile p,.step p,.timing-card p,.map-info-card p{color:var(--muted)}
 
     .soft-panel{
       background:linear-gradient(135deg,#eef2ff,#ecfeff);
@@ -1063,6 +1099,44 @@
       padding-top:16px !important;
     }
 
+    @media (min-width:1025px){
+      :root{
+        --max:1120px;
+      }
+
+      .hero{
+        padding:58px 0 96px;
+      }
+
+      .section-head h2{
+        font-size:2.55rem;
+        line-height:1.18;
+        letter-spacing:-0.3px;
+      }
+
+      .section-head p{
+        font-size:1.06rem;
+        max-width:760px;
+        margin:auto;
+      }
+
+      .trust-grid{
+        gap:22px;
+      }
+
+      .grid-4{
+        gap:22px;
+      }
+
+      .today-card{
+        padding:24px 26px;
+      }
+
+      .today-main strong{
+        font-size:1.24rem;
+      }
+    }
+
     @media (max-width:1024px){
       .hero-grid,.grid-2,.cta-banner,.footer-grid,.timing-wrap,.pdf-card,.dual-map-grid,.today-card{grid-template-columns:1fr}
       .grid-3,.trust-grid{grid-template-columns:repeat(2,1fr)}
@@ -1181,8 +1255,8 @@
       }
 
       #heroText{
-        min-height:190px;
-        max-height:190px;
+        min-height:170px;
+        max-height:none;
       }
     }
   </style>
@@ -1677,7 +1751,7 @@
         <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-start;align-items:center;">
           <a class="btn btn-light" href="#appointment">📅 Assessment Booking</a>
           <a class="btn btn-outline" href="https://wa.me/8801842739654" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-whatsapp"></i> WhatsAppে কথা বলুন
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp-এ কথা বলুন
           </a>
         </div>
       </div>
@@ -1742,7 +1816,7 @@
     <div class="container">
       <div class="section-head reveal">
         <div class="eyebrow">সেবার অভিজ্ঞতার নমুনা</div>
-        <h2>বিশ্বাস, ভরসা ও ইতিবাচক অভিজ্ঞতার উদাহরণ</h2>
+        <h2>সম্ভাব্য ইতিবাচক সেবার অভিজ্ঞতার নমুনা</h2>
         <p>শিশুবান্ধব সেবা, পরিষ্কার নির্দেশনা এবং পরিবার-কেন্দ্রিক সহযোগিতার ভিত্তিতে সম্ভাব্য অভিজ্ঞতার কিছু নমুনা এখানে তুলে ধরা হয়েছে।</p>
       </div>
 
@@ -1751,30 +1825,30 @@
           <div class="review-slide">
             <div class="review-card">
               <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
-                <strong>Parent Feedback</strong><span class="stars">★★★★★</span>
+                <strong>নমুনা অভিজ্ঞতা ১</strong><span class="stars">★★★★★</span>
               </div>
               <p>শিশুর movement নিয়ে আমরা চিন্তিত ছিলাম। assessment করার পর clear plan পেয়েছি, আর therapy session-গুলো খুব child-friendly ছিল।</p>
-              <div style="margin-top:12px;font-weight:700;color:var(--dark);">— Parent Review</div>
+              <div style="margin-top:12px;font-weight:700;color:var(--dark);">— অভিভাবক অভিজ্ঞতার নমুনা</div>
             </div>
           </div>
 
           <div class="review-slide">
             <div class="review-card">
               <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
-                <strong>Family Feedback</strong><span class="stars">★★★★★</span>
+                <strong>নমুনা অভিজ্ঞতা ২</strong><span class="stars">★★★★★</span>
               </div>
               <p>খুব সুন্দরভাবে home program বুঝিয়ে দিয়েছেন। child-friendly handling এর কারণে আমার বাচ্চা session-এ comfortable ছিল।</p>
-              <div style="margin-top:12px;font-weight:700;color:var(--dark);">— Family Review</div>
+              <div style="margin-top:12px;font-weight:700;color:var(--dark);">— পরিবারের অভিজ্ঞতার নমুনা</div>
             </div>
           </div>
 
           <div class="review-slide">
             <div class="review-card">
               <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
-                <strong>Guardian Feedback</strong><span class="stars">★★★★★</span>
+                <strong>নমুনা অভিজ্ঞতা ৩</strong><span class="stars">★★★★★</span>
               </div>
               <p>Professional behaviour, clear guidance এবং development-focused approach আমাদের খুব ভালো লেগেছে।</p>
-              <div style="margin-top:12px;font-weight:700;color:var(--dark);">— Guardian Review</div>
+              <div style="margin-top:12px;font-weight:700;color:var(--dark);">— অভিভাবক/গার্ডিয়ানের অভিজ্ঞতার নমুনা</div>
             </div>
           </div>
         </div>
@@ -2001,7 +2075,7 @@
           <div class="footer-contact-card">
             <p><strong style="color:#fff;">ফোন:</strong> 01842-739654</p>
             <p><strong style="color:#fff;">WhatsApp:</strong> 01842-739654</p>
-            <p><strong style="color:#fff;">চেম্বার:</strong> Dr. M.R. Khan Medical Center ও ঋশিল্পী ফিজিওথেরাপি এন্ড রিহাবিলিটেশন সেন্টার</p>
+            <p><strong style="color:#fff;">চেম্বার:</strong> Dr. M.R. Khan Medical Center ও ঋশিল্পী ফিজিওথেরাপি এন্ড রিহ্যাবিলিটেশন সেন্টার</p>
             <p><strong style="color:#fff;">সময়:</strong> Dr. M.R. Khan Medical Center: শনিবার–বুধবার, বিকেল ৫টা–রাত ৯টা | ঋশিল্পী: বৃহস্পতিবার বিকেল ৪টা–রাত ৯টা, শুক্রবার সকাল ৯টা–বিকেল ৫টা</p>
           </div>
         </div>
@@ -2241,7 +2315,7 @@
           <strong>জরুরি সতর্কতা:</strong> যদি খিঁচুনি, হঠাৎ দুর্বল হয়ে যাওয়া, শ্বাসকষ্ট, feeding সমস্যা, বা injury-এর পর movement কমে যায়, দ্রুত চিকিৎসকের পরামর্শ নিন।
         </div>
 
-        <a href="#appointment" class="btn btn-primary" style="width:100%;display:flex;">মূল্যায়নের জন্য অ্যাপয়েন্টমেন্ট করুন</a>
+        <a href="#appointment" class="btn btn-primary" style="width:100%;display:flex;justify-content:center;">মূল্যায়নের জন্য অ্যাপয়েন্টমেন্ট করুন</a>
       `;
     }
 
@@ -2251,6 +2325,8 @@
     const dots = document.querySelectorAll('.review-dot');
     const reviewWrap = document.getElementById('reviewWrap');
     let slideInterval;
+    let stickyInterval;
+    let heroInterval;
 
     function goToSlide(index){
       currentSlide = index;
@@ -2331,8 +2407,10 @@
       stickyMessageEl.textContent = stickyMessages[0];
       heroTextEl.style.transition = 'opacity .35s ease';
       heroTextEl.textContent = heroMessages[0];
-      setInterval(changeStickyMessage, 5000);
-      setInterval(changeHeroText, 8000);
+
+      stickyInterval = setInterval(changeStickyMessage, 5000);
+      heroInterval = setInterval(changeHeroText, 8000);
+
       startAutoSlide();
     });
 
