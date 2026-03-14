@@ -13,26 +13,29 @@
   <meta name="theme-color" content="#4f46e5" />
   <meta name="format-detection" content="telephone=no" />
 
+  <link rel="canonical" href="https://habibullahmahdi-del.github.io/Habibullah-Pediatric-physiotherapist-BD/" />
+  <meta property="og:url" content="https://habibullahmahdi-del.github.io/Habibullah-Pediatric-physiotherapist-BD/" />
+
   <meta property="og:title" content="হাবিবুল্লাহ | পেডিয়াট্রিক ফিজিওথেরাপিস্ট" />
   <meta property="og:description" content="শিশুদের চলাফেরা, বিকাশ, ব্যালান্স, সেরিব্রাল পালসি এবং পরিবার-কেন্দ্রিক পুনর্বাসন সহায়তায় পেশাদার সেবা।" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="bn_BD" />
   <meta property="og:site_name" content="হাবিবুল্লাহ | পেডিয়াট্রিক ফিজিওথেরাপিস্ট" />
-  <meta property="og:image" content="assets/preview.jpg" />
+  <meta property="og:image" content="https://habibullahmahdi-del.github.io/Habibullah-Pediatric-physiotherapist-BD/assets/preview.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="হাবিবুল্লাহ | পেডিয়াট্রিক ফিজিওথেরাপিস্ট" />
   <meta name="twitter:description" content="শিশুর বিকাশ, মোটর ফাংশন, ব্যালান্স এবং পরিবার-কেন্দ্রিক পুনর্বাসনে পেশাদার সহায়তা।" />
-  <meta name="twitter:image" content="assets/preview.jpg" />
+  <meta name="twitter:image" content="https://habibullahmahdi-del.github.io/Habibullah-Pediatric-physiotherapist-BD/assets/preview.jpg" />
 
   <meta name="geo.region" content="BD-KH" />
   <meta name="geo.placename" content="Khulna" />
   <meta name="geo.position" content="22.8456;89.5403" />
   <meta name="ICBM" content="22.8456, 89.5403" />
 
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="icon" type="image/png" href="https://habibullahmahdi-del.github.io/Habibullah-Pediatric-physiotherapist-BD/assets/favicon.png" />
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -44,6 +47,11 @@
     "name": "হাবিবুল্লাহ",
     "jobTitle": "পেডিয়াট্রিক ফিজিওথেরাপিস্ট",
     "telephone": "+8801842739654",
+    "url": "https://habibullahmahdi-del.github.io/Habibullah-Pediatric-physiotherapist-BD/",
+    "image": "https://habibullahmahdi-del.github.io/Habibullah-Pediatric-physiotherapist-BD/assets/habib.jpg",
+    "sameAs": [
+      "https://www.facebook.com/share/17MEWNWpQ2/"
+    ],
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Khulna",
@@ -90,7 +98,10 @@
       overflow-x:hidden;
     }
     body.loading{overflow:hidden}
-    body.menu-open{overflow:hidden}
+    body.menu-open{
+      overflow:hidden;
+      touch-action:none;
+    }
     a{text-decoration:none;color:inherit}
     img{max-width:100%;display:block}
     img,iframe{border:0}
@@ -251,19 +262,25 @@
       position:sticky;
       top:48px;
       z-index:1000;
-      background:rgba(255,255,255,.95);
-      backdrop-filter:blur(12px);
+      background:#ffffff;
       border-bottom:1px solid rgba(79,70,229,.08);
-      transition:all .25s ease;
+      transition:box-shadow .25s ease, transform .25s ease;
     }
     .navbar.shrink{box-shadow:0 10px 28px rgba(15,23,42,.06)}
+
     .nav{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:20px;
+      gap:12px;
       padding:8px 0;
       position:relative;
+      z-index:1102;
+    }
+
+    .brand{
+      flex:1;
+      min-width:0;
     }
     .brand h1{
       font-size:1.02rem;
@@ -307,15 +324,29 @@
 
     .menu-toggle{
       display:none;
+      align-items:center;
+      justify-content:center;
       background:#fff;
       border:none;
-      width:44px;
-      height:44px;
-      border-radius:12px;
-      box-shadow:0 8px 20px rgba(0,0,0,.08);
+      width:56px;
+      height:56px;
+      min-width:56px;
+      min-height:56px;
+      border-radius:16px;
+      box-shadow:0 6px 14px rgba(0,0,0,.06);
       cursor:pointer;
-      font-size:18px;
       color:var(--primary);
+      padding:0;
+      position:relative;
+      z-index:1101;
+      flex-shrink:0;
+      -webkit-tap-highlight-color:transparent;
+      touch-action:manipulation;
+    }
+    .menu-toggle i{
+      font-size:24px;
+      line-height:1;
+      pointer-events:none;
     }
 
     .btn{
@@ -382,6 +413,15 @@
     }
     .hero h1{font-size:3rem;line-height:1.12;margin-bottom:16px}
     .hero p{font-size:1.06rem;max-width:680px;opacity:.98;margin-bottom:24px}
+
+    #heroText{
+      min-height:150px;
+      max-height:150px;
+      overflow:hidden;
+      line-height:1.6;
+      transition:opacity .35s ease;
+    }
+
     .hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
     .badge{
       padding:10px 14px;
@@ -1047,32 +1087,48 @@
       .timing-row{flex-direction:column;align-items:flex-start}
       .today-card{padding:18px}
       .today-pills{justify-content:flex-start}
+
       .menu-toggle{
         display:flex;
-        align-items:center;
-        justify-content:center;
       }
+
       .menu{
-        display:none;
         position:absolute;
         top:100%;
         left:0;
         width:100%;
         background:#fff;
         padding:18px;
-        box-shadow:0 12px 30px rgba(0,0,0,.08);
+        box-shadow:0 12px 24px rgba(0,0,0,.06);
         flex-direction:column;
         align-items:flex-start;
         gap:14px;
         border-radius:0 0 18px 18px;
+        opacity:0;
+        visibility:hidden;
+        transform:translateY(-8px);
+        pointer-events:none;
+        transition:opacity .22s ease, transform .22s ease, visibility .22s ease;
+        display:flex;
+        will-change:opacity, transform;
+        z-index:1100;
+        -webkit-tap-highlight-color:transparent;
       }
-      .menu.show{display:flex}
+
+      .menu.show{
+        opacity:1;
+        visibility:visible;
+        transform:translateY(0);
+        pointer-events:auto;
+      }
+
       .nav{
         position:relative;
         padding:8px 0;
       }
       .nav > .btn.btn-primary{display:none}
       .mobile-booking-bar{display:block}
+
       .sticky-bar{
         height:48px;
         padding:0 10px;
@@ -1102,6 +1158,11 @@
       .profile img{
         width:220px;
         height:220px;
+      }
+
+      #heroText{
+        min-height:190px;
+        max-height:190px;
       }
     }
   </style>
@@ -1150,7 +1211,7 @@
         <a href="#contact" class="nav-link" onclick="closeMenu()">যোগাযোগ</a>
       </nav>
 
-      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
+      <button type="button" class="menu-toggle" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
         <i class="fa-solid fa-bars"></i>
       </button>
 
@@ -1390,7 +1451,7 @@
   <section class="section" id="milestone">
     <div class="container">
       <div class="section-head reveal">
-        <div class="eyebrow">Development Milestone Chart</div>
+        <div class="eyebrow">বিকাশের ধাপ</div>
         <h2>বয়সভিত্তিক শিশুর সাধারণ মোটর বিকাশের ধাপ</h2>
         <p>এটি সাধারণ নির্দেশনা। সব শিশু একই গতিতে বিকাশ করে না। তবে উল্লেখযোগ্য দেরি থাকলে মূল্যায়ন করানো উপকারী হতে পারে।</p>
       </div>
@@ -1533,7 +1594,7 @@
     <div class="container">
       <div class="section-head reveal">
         <div class="eyebrow">শিশুর লক্ষণভিত্তিক প্রাথমিক সহায়ক নির্দেশনা</div>
-        <h2>Symptom Support Tool</h2>
+        <h2>লক্ষণভিত্তিক প্রাথমিক সহায়ক নির্দেশনা</h2>
         <p>
           এখানে শিশুর সমস্যার ধরন বেছে নিয়ে একটি প্রাথমিক ধারণা পাবেন।
           এটি চিকিৎসকের বিকল্প নয়, বরং কখন মূল্যায়নের জন্য অ্যাপয়েন্টমেন্ট করা উচিত হতে পারে
@@ -1631,7 +1692,7 @@
   <section class="section" id="faq">
     <div class="container">
       <div class="section-head reveal">
-        <div class="eyebrow">Parents FAQ</div>
+        <div class="eyebrow">অভিভাবকদের প্রশ্নোত্তর</div>
         <h2>অভিভাবকদের সাধারণ প্রশ্ন</h2>
         <p>শিশুর বিকাশ, ফিজিওথেরাপি মূল্যায়ন এবং পুনর্বাসন নিয়ে গুরুত্বপূর্ণ কিছু সাধারণ প্রশ্ন।</p>
       </div>
@@ -1660,9 +1721,9 @@
   <section class="section" id="reviews" style="background:linear-gradient(180deg,#ffffff,#f8fbff);">
     <div class="container">
       <div class="section-head reveal">
-        <div class="eyebrow">অভিভাবকদের মতামত</div>
-        <h2>বিশ্বাস, ভরসা ও ইতিবাচক অভিজ্ঞতা</h2>
-        <p>শিশুবান্ধব সেবা, পরিষ্কার নির্দেশনা এবং পরিবার-কেন্দ্রিক সহযোগিতার ভিত্তিতে অভিভাবকদের অভিজ্ঞতার কিছু নমুনা এখানে তুলে ধরা হয়েছে।</p>
+        <div class="eyebrow">নমুনা মতামত</div>
+        <h2>বিশ্বাস, ভরসা ও ইতিবাচক অভিজ্ঞতার উদাহরণ</h2>
+        <p>শিশুবান্ধব সেবা, পরিষ্কার নির্দেশনা এবং পরিবার-কেন্দ্রিক সহযোগিতার ভিত্তিতে সম্ভাব্য অভিজ্ঞতার কিছু নমুনা এখানে তুলে ধরা হয়েছে।</p>
       </div>
 
       <div class="review-slider-wrap reveal" id="reviewWrap">
@@ -1943,9 +2004,6 @@
             <a href="https://www.facebook.com/share/17MEWNWpQ2/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <i class="fa-brands fa-facebook-f"></i>
             </a>
-            <a href="#" aria-label="YouTube">
-              <i class="fa-brands fa-youtube"></i>
-            </a>
             <a href="https://wa.me/8801842739654" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
               <i class="fa-brands fa-whatsapp"></i>
             </a>
@@ -1958,7 +2016,7 @@
       </div>
 
       <div class="copyright">
-        © <span id="year"></span> Habibullah | Pediatric Physiotherapist. All rights reserved.
+        © <span id="year"></span> হাবিবুল্লাহ | পেডিয়াট্রিক ফিজিওথেরাপিস্ট। সর্বস্বত্ব সংরক্ষিত।
       </div>
     </div>
   </footer>
@@ -1986,16 +2044,17 @@
       const isOpen = menu.classList.toggle('show');
       menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       body.classList.toggle('menu-open', isOpen);
-      menuBtn.innerHTML = isOpen
-        ? '<i class="fa-solid fa-xmark"></i>'
-        : '<i class="fa-solid fa-bars"></i>';
+      menuBtn.querySelector('i').className = isOpen
+        ? 'fa-solid fa-xmark'
+        : 'fa-solid fa-bars';
     }
 
     function closeMenu(){
+      if(!menu.classList.contains('show')) return;
       menu.classList.remove('show');
       menuBtn.setAttribute('aria-expanded', 'false');
       body.classList.remove('menu-open');
-      menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      menuBtn.querySelector('i').className = 'fa-solid fa-bars';
     }
 
     document.addEventListener('click', function(e){
@@ -2035,13 +2094,15 @@
         return;
       }
 
-      const message = `শিশু ফিজিওথেরাপি অ্যাপয়েন্টমেন্ট অনুরোধ
-----------------------------
+      const message = `আসসালামু আলাইকুম, আমি শিশু ফিজিওথেরাপি অ্যাপয়েন্টমেন্ট নিতে চাই।
+
 অভিভাবকের নাম: ${name}
-মোবাইল: ${phone}
+মোবাইল নম্বর: ${phone}
 শিশুর বয়স: ${age || 'উল্লেখ করা হয়নি'}
 সেবা: ${service}
-সমস্যা: ${problem || 'উল্লেখ করা হয়নি'}`;
+সমস্যার বিবরণ: ${problem || 'উল্লেখ করা হয়নি'}
+
+অনুগ্রহ করে সুবিধাজনক সময় জানাবেন।`;
 
       const url = `https://wa.me/8801842739654?text=${encodeURIComponent(message)}`;
       window.open(url, '_blank', 'noopener');
@@ -2209,11 +2270,11 @@
 
     const heroMessages = [
       "যদি শিশু বয়স অনুযায়ী বসতে, দাঁড়াতে বা হাঁটতে দেরি করে, এটি বিকাশের একটি সতর্ক সংকেত হতে পারে। সময়মতো পেডিয়াট্রিক ফিজিওথেরাপি শিশুর মোটর বিকাশ উন্নত করতে সহায়তা করতে পারে।",
-      "শিশু হাঁটার সময় বারবার পড়ে যায় বা ব্যালান্স ঠিক রাখতে না পারলে এটি শরীরের সমন্বয় সমস্যার ইঙ্গিত হতে পারে। সঠিক ফিজিওথেরাপি সহায়তায় চলাফেরা ও ব্যালান্স উন্নত করা সম্ভব।",
-      "শিশুর হাত-পা যদি অস্বাভাবিকভাবে শক্ত লাগে বা খুব তুলতুলে নরম মনে হয়, এটি স্নায়বিক সমস্যার একটি লক্ষণ হতে পারে। পেডিয়াট্রিক ফিজিওথেরাপির মাধ্যমে পেশী নিয়ন্ত্রণ ও চলাচল উন্নত করা যায়।",
-      "শিশু যদি হামাগুড়ি, বসা বা হাঁটার milestone অর্জনে দেরি করে, দ্রুত মূল্যায়ন গুরুত্বপূর্ণ। সময়মতো থেরাপি শুরু করলে শিশুর বিকাশের গতি উন্নত হতে পারে।",
-      "শিশু যদি শরীরের এক পাশ বেশি ব্যবহার করে বা এক পাশে দুর্বলতা দেখা যায়, এটি বিকাশগত সমস্যার একটি সতর্ক সংকেত হতে পারে। ফিজিওথেরাপির মাধ্যমে শরীরের সমন্বয় উন্নত করা সম্ভব।",
-      "শিশুর বিকাশ নিয়ে কোনো উদ্বেগ থাকলে দেরি না করে পরামর্শ নেওয়া গুরুত্বপূর্ণ। early intervention ফিজিওথেরাপি শিশুর উন্নয়নে গুরুত্বপূর্ণ ভূমিকা রাখতে পারে।"
+      "শিশু হাঁটার সময় বারবার পড়ে গেলে বা ব্যালান্স ঠিক রাখতে না পারলে এটি চলাফেরার সমন্বয় সমস্যার ইঙ্গিত হতে পারে। সঠিক ফিজিওথেরাপি সহায়তায় উন্নতি সম্ভব।",
+      "শিশুর হাত-পা অস্বাভাবিকভাবে শক্ত বা খুব নরম লাগলে সেটি মূল্যায়নের প্রয়োজন হতে পারে। পেডিয়াট্রিক ফিজিওথেরাপি শিশুর movement control উন্নত করতে সহায়তা করে।",
+      "শিশু যদি হামাগুড়ি, বসা বা হাঁটার milestone অর্জনে দেরি করে, early assessment গুরুত্বপূর্ণ। সময়মতো থেরাপি শিশুর বিকাশে ভালো ভূমিকা রাখতে পারে।",
+      "শিশু যদি শরীরের এক পাশ বেশি ব্যবহার করে বা এক পাশে দুর্বলতা দেখা যায়, এটি বিকাশগত সমস্যার একটি লক্ষণ হতে পারে। সঠিক মূল্যায়ন উপকারী হতে পারে।",
+      "শিশুর বিকাশ নিয়ে কোনো উদ্বেগ থাকলে দেরি না করে পরামর্শ নেওয়া ভালো। early intervention অনেক ক্ষেত্রে শিশুর উন্নয়নের সুযোগ বাড়ায়।"
     ];
 
     let heroIndex = 0;
@@ -2278,9 +2339,17 @@
       }
     }
 
+    let ticking = false;
+
     window.addEventListener('scroll', () => {
-      setActiveNav();
-      handleNavbarShadow();
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setActiveNav();
+          handleNavbarShadow();
+          ticking = false;
+        });
+        ticking = true;
+      }
     });
 
     setActiveNav();
